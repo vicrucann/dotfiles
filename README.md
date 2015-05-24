@@ -12,3 +12,7 @@
 `cd ~/.vim`  
 `git submodule init`  
 `git submodule update`
+
+##### Original link  
+
+[Keep Vim settings and plugins in Git repo](http://dudarev.com/blog/keep-vim-settings-and-plugins-in-git-repo/)
