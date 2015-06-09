@@ -6,6 +6,7 @@
 
 `ln -s ~/.vim/vimrc ~/.vimrc`  
 `ln -s ~/.vim/gvimrc ~/.gvimrc`  
+`ln -s ~/.vim/zshrc ~/.zshrc`  
 
 ##### Switch to the `~/.vim` directory, and fetch submodules:
 
