@@ -112,9 +112,10 @@ let g:netrw_liststyle=3
 
 filetype plugin on
 
-set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+set background=light
 colorscheme solarized
-set t_Co=16
 
 " CtrlP
 "map <leader>t <C-p>
