@@ -178,3 +178,11 @@ map <Leader>cs :Tabularize /:\zs<cr>
 "sunmap w
 "sunmap b
 "sunmap e
+
+" BINDINGS
+
+" Map <F9> to make command
+:map <F9> :make
+
+" Map <F10> to run :!./
+:map <F5> :!./
