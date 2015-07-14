@@ -182,7 +182,11 @@ map <Leader>cs :Tabularize /:\zs<cr>
 " BINDINGS
 
 " Map <F9> to make command
-:map <F9> :make
+:function! C_MAKE()
+:make %:r
+:endfunction
+
+:map <F9> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
 
 " Map <F10> to run :!./
 :map <F5> :!./
