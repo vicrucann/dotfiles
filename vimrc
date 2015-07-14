@@ -186,7 +186,7 @@ map <Leader>cs :Tabularize /:\zs<cr>
 :make %:r
 :endfunction
 
-:map <F9> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
+:map <F9> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
 
 " Map <F10> to run :!./
 :map <F5> :!./
