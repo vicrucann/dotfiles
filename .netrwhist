@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/alice'
-let g:netrw_dirhist_2='/home/alice/github/Kmat-virtual/src'
-let g:netrw_dirhist_3='/home/alice/.oh-my-zsh'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/alice/github'
+let g:netrw_dirhist_2='/home/alice/github/codalgs'
+let g:netrw_dirhist_3='/home/alice/github/codalgs/cforce'
+let g:netrw_dirhist_4='/home/alice/github'
+let g:netrw_dirhist_5='/home/alice/github/codalgs'
+let g:netrw_dirhist_6='/home/alice/github/codalgs/cforce'

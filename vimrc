@@ -183,10 +183,10 @@ map <Leader>cs :Tabularize /:\zs<cr>
 
 " Map <F9> to make command
 :function! C_MAKE()
-:make %:r
+:make %:r | copen
 :endfunction
 
 :map <F9> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
 
-" Map <F10> to run :!./
-:map <F5> :!./
+" Map <F5> to run 
+:map <F5> :!./%:r<CR>
