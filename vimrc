@@ -186,7 +186,9 @@ map <Leader>cs :Tabularize /:\zs<cr>
 :make %:r | copen
 :endfunction
 
-:map <F9> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
+:nmap <F9> <Esc> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
+:imap <F9> <Esc> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
 
 " Map <F5> to run 
-:map <F5> :!./%:r<CR>
+:nmap <F5> <Esc> :!./%:r<CR>
+:imap <F5> <Esc> :!./%:r<CR>
