@@ -186,8 +186,8 @@ map <Leader>cs :Tabularize /:\zs<cr>
 :make %:r | copen
 :endfunction
 
-:nmap <F9> <Esc> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
-:imap <F9> <Esc> :w<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR>
+:nmap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
+:imap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 
 " Map <F5> to run 
 :nmap <F5> <Esc> :!./%:r<CR>
