@@ -1,7 +1,7 @@
 ##### Main configuration files
-* vim: C++ oriented, solarized color scheme
-* zsh: built on robbyrussel configuration using tutorial on [Configure Linux toolset: zsh, tmux, vim](https://www.codementor.io/linux/tutorial/configure-linux-toolset-zsh-tmux-vim#/)
-* LXTerminal (Lubuntu): imitation of solarized color scheme for background and foreground colors
+* vim : C++ oriented, solarized color scheme
+* zsh : built on robbyrussel configuration using tutorial on [Configure Linux toolset: zsh, tmux, vim](https://www.codementor.io/linux/tutorial/configure-linux-toolset-zsh-tmux-vim#/)
+* LXTerminal (Lubuntu) : imitation of solarized color scheme for background and foreground colors
 
 ##### Installation:  
 
@@ -12,6 +12,7 @@
 `ln -s ~/.vim/vimrc ~/.vimrc`  
 `ln -s ~/.vim/zshrc ~/.zshrc`  
 `ln -s ~/.vim/lxterminal.conf ~/.config/lxterminal/lxterminal.conf`  
+`ln -s ~/.vim/tmux.conf ~/.tmux.conf`
 
 ##### Switch to the `~/.vim` directory, and fetch submodules:
 
