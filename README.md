@@ -6,6 +6,7 @@
 
 `ln -s ~/.vim/vimrc ~/.vimrc`  
 `ln -s ~/.vim/zshrc ~/.zshrc`  
+`ln -s ~/.vim/lxterminal.conf ~/.config/lxterminal/lxterminal.conf`  
 
 ##### Switch to the `~/.vim` directory, and fetch submodules:
 
