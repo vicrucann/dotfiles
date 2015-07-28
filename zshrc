@@ -7,6 +7,15 @@ export ZSH=/home/alice/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+# allow terminal to support 256 color schemes
+export TERM="xterm-256color"
+
+# if you do a 'rm *', Zsh will give you a sanity check!
+setopt RM_STAR_WAIT
+
+# Zsh has a spelling corrector
+setopt CORRECT
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
