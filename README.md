@@ -19,6 +19,7 @@
 `$ tmux attach -t tmname` - in terminal: attach the session `tmname` back  
 `$ tmux kill-session -t tmname` - kill the `tmname` session  
 `<C>-a r` - reload Tmux configuration while being in Tmux session  
+`<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 
 ##### Installation:  
 
