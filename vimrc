@@ -6,7 +6,6 @@ syntax on
 " Use vim, not vi api
 set nocompatible
 
-
 " backup files
 "set nobackup
 "
@@ -108,6 +107,10 @@ let g:netrw_liststyle=3
 " autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
 " set colorcolumn=80
 
+" nice EOL (end of line) characters
+" set list
+" set listchars=tab:▸\ ,eol:¬
+
 " PLUGINS
 
 filetype plugin on
@@ -116,6 +119,12 @@ set t_Co=256
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
+
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+
+" Plugin 'gmarik/Vundle.vim'       # vundle
+" Plugin 'flazz/vim-colorschemes'  # nice colors
 
 " CtrlP
 "map <leader>t <C-p>
