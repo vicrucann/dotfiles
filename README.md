@@ -21,6 +21,11 @@
 `<C>-a r` - reload Tmux configuration while being in Tmux session  
 `<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 
+#### Tmux-sidebar
+
+`<C-a> <Tab>` - display the sidebar  
+`<C-a> <Backspace>` - display the sidebar and put focus on it  
+
 ## Installation:  
 
 `git clone git://github.com/vicrucann/dotvim.git ~/.vim`
