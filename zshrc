@@ -8,7 +8,11 @@ export ZSH=/home/alice/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # allow terminal to support 256 color schemes
-export TERM="xterm-256color"
+if [[ $TERM == xterm ]]; then
+    TERM=xterm-256color
+fi
+#export TERM="xterm-256color"
+alias tmux="tmux -2"
 
 # if you do a 'rm *', Zsh will give you a sanity check!
 setopt RM_STAR_WAIT
