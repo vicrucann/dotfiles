@@ -36,6 +36,7 @@
 `ln -s ~/.vim/zshrc ~/.zshrc`  
 `ln -s ~/.vim/lxterminal.conf ~/.config/lxterminal/lxterminal.conf`  
 `ln -s ~/.vim/tmux.conf ~/.tmux.conf`
+ln -s ~/.vim/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
 
 #### Switch to the `~/.vim` directory, and fetch submodules:
 
