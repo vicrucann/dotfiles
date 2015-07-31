@@ -1,22 +1,21 @@
-#use extended color pallete if available
-if [[ $TERM == 256color ]]; then
-    turquoise="%F{81}"
-    orange="%F{166}"
-    purple="%F{135}"
-    hotpink="%F{161}"
-    limegreen="%F{118}"
-else
-    turquoise="$fg[cyan]"
-    orange="$fg[yellow]"
-    purple="$fg[magenta]"
-    hotpink="$fg[red]"
-    limegreen="$fg[green]"
-fi
+typeset -Ag FX FG BG
+FX=(
+    reset     "%{[00m%}"
+    bold      "%{[01m%}" no-bold      "%{[22m%}"
+    italic    "%{[03m%}" no-italic    "%{[23m%}"
+    underline "%{[04m%}" no-underline "%{[24m%}"
+    blink     "%{[05m%}" no-blink     "%{[25m%}"
+    reverse   "%{[07m%}" no-reverse   "%{[27m%}"
+)
+for color in {000..255}; do
+    FG[$color]="%{[38;5;${color}m%}"
+    BG[$color]="%{[48;5;${color}m%}"
+done
 
 # The current user
-VIRUCA_USER="%{$fg[magenta]%}%n%{$reset_color%}"
-VIRUCA_MACHINE="%{$fg[yellow]%}%m%{$fg[white]%}%{$reset_color%}"
-VIRUCA_PATH="%{$fg[154]%}%~ %{$reset_color%}"
+VIRUCA_USER="%{%F{136}%}%n%{$reset_color%}"
+VIRUCA_MACHINE="%{%F{61}%}%m%{$reset_color%}"
+VIRUCA_PATH="%{%F{64}%}%~ %{$reset_color%}"
 
 PROMPT="
 $VIRUCA_USER@$VIRUCA_MACHINE:$VIRUCA_PATH $ "
