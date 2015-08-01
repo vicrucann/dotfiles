@@ -1,22 +1,17 @@
-typeset -Ag FX FG BG
-FX=(
-    reset     "%{[00m%}"
-    bold      "%{[01m%}" no-bold      "%{[22m%}"
-    italic    "%{[03m%}" no-italic    "%{[23m%}"
-    underline "%{[04m%}" no-underline "%{[24m%}"
-    blink     "%{[05m%}" no-blink     "%{[25m%}"
-    reverse   "%{[07m%}" no-reverse   "%{[27m%}"
-)
-for color in {000..255}; do
-    FG[$color]="%{[38;5;${color}m%}"
-    BG[$color]="%{[48;5;${color}m%}"
-done
-
 # The current user
-VIRUCA_USER="%{%F{136}%}%n%{$reset_color%}"
-VIRUCA_MACHINE="%{%F{61}%}%m%{$reset_color%}"
-VIRUCA_PATH="%{%F{64}%}%~ %{$reset_color%}"
+#VIRUCA_USER="%{%F{136}%}%n%{$reset_color%}"
+#VIRUCA_MACHINE="%{%F{61}%}%m%{$reset_color%}"
+#VIRUCA_PATH="%{%F{64}%}%~ %{$reset_color%}"
 
-PROMPT="
-$VIRUCA_USER@$VIRUCA_MACHINE:$VIRUCA_PATH $ "
+#PROMPT='$VIRUCA_USER@$VIRUCA_MACHINE:$VIRUCA_PATH $ '
+
+local ret_status="%(?:%{%F{33}%}➜ :%{%F{166}%}➜ %s)" #status arrow [blue][orange]
+
+PROMPT='${ret_status}%{%F{64}%}%p %{%F{136}%}%c %{%F{37}%}$(git_prompt_info)%{%F{33}%} % %{$reset_color%}'
+#[green]  path[yellow] [cyan] [blue]
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{61}[%}" # master {violet}
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{61}]%} %{%F{125}%}✗%{$reset_color%}" # status [brgreen][magenta]
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
