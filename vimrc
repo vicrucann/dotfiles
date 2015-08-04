@@ -116,11 +116,6 @@ let g:netrw_liststyle=3
 
 filetype plugin on
 
-" Solarized color scheme
-set t_Co=256
-let g:solarized_termcolors=256
-set background=light
-colorscheme solarized
 
 " Vundle settings
 
@@ -129,11 +124,16 @@ filetype off  " required to use with Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
-
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
 call vundle#end()  " required by vundle
 filetype plugin indent on  " required by vundle
 
-" Plugin 'flazz/vim-colorschemes'  # nice colors
+" Solarized color scheme
+set t_Co=256
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
 
 " CtrlP
 "map <leader>t <C-p>
