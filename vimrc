@@ -116,16 +116,14 @@ let g:netrw_liststyle=3
 
 filetype plugin on
 
-
 " Vundle settings
-
 filetype off  " required to use with Vundle
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
-"Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
+Plugin 'scrooloose/nerdtree'
 call vundle#end()  " required by vundle
 filetype plugin indent on  " required by vundle
 

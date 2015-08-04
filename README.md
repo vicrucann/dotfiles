@@ -3,6 +3,7 @@
 #### Vim plugins
 * Plugin management: [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Color scheme: [Solarized](https://github.com/altercation/vim-colors-solarized)
+* File viewer: [NERDTree](https://github.com/scrooloose/nerdtree)
 * C++ enhanced highlights: [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
 #### zsh
