@@ -1,4 +1,8 @@
 ## Main configuration files
+
+#### Vim plugins
+* Vundle  
+
 * vim : C++ oriented, solarized color scheme
 * zsh : built on robbyrussel configuration using tutorial on [Configure Linux toolset: zsh, tmux, vim](https://www.codementor.io/linux/tutorial/configure-linux-toolset-zsh-tmux-vim#/)
 * LXTerminal (Lubuntu) : imitation of solarized color scheme for background and foreground colors

@@ -6,6 +6,7 @@ syntax on
 " Use vim, not vi api
 set nocompatible
 
+
 " backup files
 "set nobackup
 "
@@ -115,15 +116,23 @@ let g:netrw_liststyle=3
 
 filetype plugin on
 
+" Solarized color scheme
 set t_Co=256
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
+" Vundle settings
 
-" Plugin 'gmarik/Vundle.vim'       # vundle
+filetype off  " required to use with Vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'       " required by vundle
+
+call vundle#end()  " required by vundle
+filetype plugin indent on  " required by vundle
+
 " Plugin 'flazz/vim-colorschemes'  # nice colors
 
 " CtrlP
