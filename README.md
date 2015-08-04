@@ -1,11 +1,21 @@
 ## Main configuration files
 
 #### Vim plugins
-* Vundle  
+* Plugin management: [Vundle](https://github.com/VundleVim/Vundle.vim)
+* Color scheme: [Solarized](https://github.com/altercation/vim-colors-solarized)
+* C++ enhanced highlights: [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
-* vim : C++ oriented, solarized color scheme
-* zsh : built on robbyrussel configuration using tutorial on [Configure Linux toolset: zsh, tmux, vim](https://www.codementor.io/linux/tutorial/configure-linux-toolset-zsh-tmux-vim#/)
-* LXTerminal (Lubuntu) : imitation of solarized color scheme for background and foreground colors
+#### zsh
+* Based on robbyrussel's [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)  
+* Custom prompt configuration: [viruca]()
+
+#### LXTerminial (Lubuntu)
+* Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors
+
+#### Tmux
+
+#### dircolors
+* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls`
 
 ## Basic commands / bindings
 
