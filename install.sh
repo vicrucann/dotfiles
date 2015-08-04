@@ -3,6 +3,9 @@
 # Suggest to pull submodules
 # Create all the necessary symbolic links
 
+# .vim directory and plugins
+
+
 # symbolic links
 ln -s pwd/vimrc ~/.vimrc
 ln -s pwd/zshrc ~/.zshrc
