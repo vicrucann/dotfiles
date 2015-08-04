@@ -123,7 +123,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()  " required by vundle
 filetype plugin indent on  " required by vundle
 
@@ -151,7 +156,7 @@ colorscheme solarized
 "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " CtrlP -> directories to ignore when fuzzy finding
-let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
+"let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
 
 " Ack (uses Ag behind the scenes)
 "let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -179,13 +184,13 @@ let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))
 "highlight clear SignColumn
 
 " Searching the file system
-map <leader>' :NERDTreeToggle<cr>
+"map <leader>' :NERDTreeToggle<cr>
 
 " Tabularize
-map <Leader>e :Tabularize /=<cr>
-map <Leader>c :Tabularize /:<cr>
-map <Leader>es :Tabularize /=\zs<cr>
-map <Leader>cs :Tabularize /:\zs<cr>
+"map <Leader>e :Tabularize /=<cr>
+"map <Leader>c :Tabularize /:<cr>
+"map <Leader>es :Tabularize /=\zs<cr>
+"map <Leader>cs :Tabularize /:\zs<cr>
 
 " Camel Case Motion (for dealing with programming code)
 "map <silent> w <Plug>CamelCaseMotion_w

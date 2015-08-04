@@ -18,9 +18,12 @@ if [ $? -ne 0 ]; then
   printf "ERROR: could not create ~/.vim directory, check if you have sufficient rights\n"
   exit 1
 fi
-printf "Loading the necessary VIM plugins\n"
+printf "Loading and installing the necessary VIM plugins using Vundle\n"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+printf "Done\n\n"
+
+printf "Installing other plugins using command line\n"
 
 printf "Done\n\n"
 

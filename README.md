@@ -4,7 +4,12 @@
 * Plugin management: [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Color scheme: [Solarized](https://github.com/altercation/vim-colors-solarized)
 * File viewer: [NERDTree](https://github.com/scrooloose/nerdtree)
-* C++ enhanced highlights: [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
+* Status bar: [vim-airline](https://github.com/bling/vim-airline)
+* Working with codes: 
+  * code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
+  * syntax check - [syntastic](https://github.com/scrooloose/syntastic) 
+  * code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+  * enhanced C++ highlights - [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
 #### zsh
 * Based on robbyrussel's [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)  
