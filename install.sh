@@ -33,6 +33,7 @@ ln -s pwd/zshrc ~/.zshrc
 ln -s pwd/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 ln -s pwd/tmux.conf ~/.tmux.conf
 ln -s pwd/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
+ln -s pwd/template.cpp ~/.vim/template.cpp
 
 # change to zsh
 chsh -s $(which zsh) 
