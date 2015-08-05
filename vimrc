@@ -1,4 +1,4 @@
-" SETTINGS
+" SETTINGS {{{
 
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
@@ -6,13 +6,9 @@ syntax on
 " Use vim, not vi api
 set nocompatible
 
-
-" backup files
-"set nobackup
-"
 " No write backup
 set nowritebackup
-"
+
 " " No swap file
 set noswapfile
 
@@ -66,9 +62,6 @@ set laststatus=2
 " " Set the status line to something useful
 set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
 
-" " Hide the toolbar
-" set guioptions-=T
-
 " " UTF encoding
 set encoding=utf-8
 
@@ -101,7 +94,7 @@ set showmatch
 
 " " Set built-in file system explorer to use layout similar to the NERDTree
 " plugin
-let g:netrw_liststyle=3
+"let g:netrw_liststyle=3
 
 " " Always highlight column 80 so it's easier to see where
 " " cutoff appears on longer screens
@@ -111,8 +104,9 @@ let g:netrw_liststyle=3
 " nice EOL (end of line) characters
 " set list
 " set listchars=tab:▸\ ,eol:¬
+" }}}
 
-" PLUGINS
+" PLUGINS {{{
 
 filetype plugin on
 
@@ -199,8 +193,9 @@ colorscheme solarized
 "sunmap w
 "sunmap b
 "sunmap e
+" }}}
 
-" BINDINGS
+" BINDINGS {{{
 
 " Map <F9> to make command
 :function! C_MAKE()
@@ -213,3 +208,65 @@ colorscheme solarized
 " Map <F5> to run 
 :nmap <F5> <Esc> :!./%:r<CR>
 :imap <F5> <Esc> :!./%:r<CR>
+
+" }}}
+
+" COMMANDS {{{
+
+" " When *.cpp file created, load it from template
+autocmd BufNewFile *.cpp r ~/.vim/template.cpp
+
+" " Automatically close the folds when the file is open
+autocmd BufRead * setlocal foldmethod=marker
+autocmd BufRead * nomral zM
+
+" " file formats
+autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd Filetype markdown setlocal wrap linebreak nolist textwidth=0
+" wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+autocmd FileType sh,cucumber,ruby,yaml,zsh,vim setlocal shiftwidth=2
+" tabstop=2 expandtab
+
+" "specify syntax highlighting for specific files
+autocmd Bufread,BufNewFile *.md set filetype=markdown
+
+" Highlight words to avoid in tech writing
+" " http://css-tricks.com/words-avoid-educational-writing/
+highlight TechWordsToAvoid ctermbg=red ctermfg=white
+match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy/
+autocmd BufWinEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+autocmd InsertEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+autocmd InsertLeave * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+autocmd BufWinLeave * call clearmatches()
+
+" Rainbow parenthesis always on!
+if exists(':RainbowParenthesesToggle')
+    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
+endif
+
+" Reset spelling colours when reading a new buffer
+" " This works around an issue where the colorscheme is changed by
+" .local.vimrc
+fun! SetSpellingColors()
+    highlight SpellBad cterm=bold ctermfg=white ctermbg=red
+    highlight SpellCap cterm=bold ctermfg=red ctermbg=white
+endfun
+autocmd BufWinEnter * call SetSpellingColors()
+autocmd BufNewFile * call SetSpellingColors()
+autocmd BufRead * call SetSpellingColors()
+autocmd InsertEnter * call SetSpellingColors()
+autocmd InsertLeave * call SetSpellingColors()
+
+" Change colourscheme when diffing
+fun! SetDiffColors()
+    highlight DiffAdd    cterm=bold ctermfg=white ctermbg=DarkGreen
+    highlight DiffDelete cterm=bold ctermfg=white ctermbg=DarkGrey
+    highlight DiffChange cterm=bold ctermfg=white ctermbg=DarkBlue
+    highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
+endfun
+autocmd FilterWritePre * call SetDiffColors()
+
+" }}}
