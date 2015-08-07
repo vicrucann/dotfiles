@@ -11,21 +11,6 @@
 #printf "- LXTerminal\n"
 #printf "- dircolors (for commands such as ls)\n\n"
 
-# .vim directory and plugins
-printf "Checking for .vim directory\n"
-mkdir -p ~/.vim
-if [ $? -ne 0 ]; then
-  printf "ERROR: could not create ~/.vim directory, check if you have sufficient rights\n"
-  exit 1
-fi
-printf "Loading and installing the necessary VIM plugins using Vundle\n"
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-printf "Done\n\n"
-
-printf "Installing other plugins using command line\n"
-printf "Done\n\n"
-
 # remove previous config files, if any
 printf "Removing any existing config files...\n"
 rm -f ~/.vimrc
@@ -56,8 +41,6 @@ elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 		SH="$HOME/.$ifs"
 		STARGET="$(cygpath -w -p $SP)"
 		SLINK="$(cygpath -w -p $SH)"
-		#echo $STARGET
-		#echo $SLINK
 		cmd.exe /c mklink $SLINK $STARGET
 	done
 	# files with other destinations:
@@ -65,29 +48,42 @@ elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 	SH="$HOME/.config/lxterminal/lxterminal.conf"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	echo $STARGET
-	echo $SLINK
 	cmd.exe /c mklink $SLINK $STARGET
 
 	SP="$(pwd)/viruca.zsh-theme"
 	SH="$HOME/.oh-my-zsh/themes/viruca.zsh-theme"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	echo $STARGET
-	echo $SLINK
 	cmd.exe /c mklink $SLINK $STARGET
 
 	SP="$(pwd)/template.cpp"
 	SH="$HOME/.vim/template.cpp"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	echo $STARGET
-	echo $SLINK
 	cmd.exe /c mklink $SLINK $STARGET
 else
 	printf "ERROR: current platform is not supported\n"
 	exit 1
 fi
+printf "Done\n\n"
+
+# .vim directory and plugins
+printf "Checking for .vim directory\n"
+mkdir -p ~/.vim
+if [ $? -ne 0 ]; then
+  printf "ERROR: could not create ~/.vim directory, check if you have sufficient rights\n"
+  exit 1
+fi
+printf "Done\n\n"
+
+printf "Loading and installing the necessary VIM plugins using Vundle\n"
+printf "Clean the Vundle folder, if needed\n"
+rm -r -f ~/.vim/bundle/Vundle.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+printf "Done\n\n"
+
+printf "Installing other plugins using command line\n"
 printf "Done\n\n"
 
 # change to zsh
