@@ -218,7 +218,7 @@ autocmd BufNewFile *.cpp r ~/.vim/template.cpp
 
 " " Automatically close the folds when the file is open
 autocmd BufRead * setlocal foldmethod=marker
-autocmd BufRead * nomral zM
+autocmd BufRead * normal zM
 
 " " file formats
 autocmd Filetype gitcommit setlocal spell textwidth=72
