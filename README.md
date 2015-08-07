@@ -1,3 +1,8 @@
+## Installation requirements
+* Was made to work under Lubuntu-14.04
+* Is being tuned to work with Cygwin under Windows 7 (requires cygutils package to run  mkshortcut utility for creating `*.lnk` files)
+	* Note: the Cygwin must be run as Administrtor to create the correct simbolic links
+
 ## Main configuration files
 
 #### Vim plugins
