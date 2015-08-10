@@ -1,6 +1,6 @@
 ## Overview
 
-lubuntu-dot-configs is my personal dot file repository which is under active development. The latest stable version is accessible through versions; the master branch is a development branch. The configurations include: 
+lubuntu-dot-configs is my personal dot file repository which is under active development. The main criterias for my dot files are to be **lightweight** and **readable**. The latest stable version is accessible through versions; the master branch is a development branch. The configuration files include: 
 * LXTerminal - a lightweight Linux terminal
 * oh-my-zsh (planning to switch to more lightweight alternative)
 * tmux
@@ -29,7 +29,7 @@ $ git submodule update --init --recursive
 $ ./install.sh
 ```
 
-## Main configuration files
+## Configuration files
 
 #### Vim plugins
 * Plugin management: [Vundle](https://github.com/VundleVim/Vundle.vim)
@@ -37,25 +37,26 @@ $ ./install.sh
 * File viewer: [NERDTree](https://github.com/scrooloose/nerdtree)
 * Status bar: [vim-airline](https://github.com/bling/vim-airline)
 * Working with codes: 
-  * code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
-  * syntax check - [syntastic](https://github.com/scrooloose/syntastic) 
-  * code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-  * enhanced C++ highlights - [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
+  * Code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
+  * Syntax check - [syntastic](https://github.com/scrooloose/syntastic) 
+  * Enhanced C++ highlights - [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 * Not installed, but planned to chose from to improve functionality:
   * Switch between source and header file - [a.vim](http://www.vim.org/scripts/script.php?script_id=31)
   * Snippets - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540) or [UltiSnips](http://www.vim.org/scripts/script.php?script_id=2715) or [c.vim](http://www.vim.org/scripts/script.php?script_id=213)
   * Reference search, e.g. variables, classes, functions - [cscope](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
   * Go to definition - [ctags](http://ctags.sourceforge.net/)
+  * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
   * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)
 
 #### zsh
 * Based on robbyrussel's [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)  
-* Custom prompt configuration: [viruca]()
+* Custom prompt configuration: [viruca](://github.com/vicrucann/lubuntu-dot-configs/blob/master/viruca.zsh-theme)
 
 #### LXTerminial (Lubuntu)
 * Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors solely
 
 #### Tmux
+* Replaced some basic key bindings for easier reach
 
 #### dircolors
 * Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized)
@@ -78,7 +79,6 @@ $ ./install.sh
 `<C>-a r` - reload Tmux configuration while being in Tmux session  
 `<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 
-## Installation:  
 
 
 
