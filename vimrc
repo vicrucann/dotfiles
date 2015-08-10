@@ -199,7 +199,7 @@ colorscheme solarized
 
 " Map <F9> to make command
 :function! C_MAKE()
-:make %:r | copen
+:make %:r | :cwindow
 :endfunction
 
 :nmap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
