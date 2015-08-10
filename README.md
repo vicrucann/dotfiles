@@ -2,7 +2,11 @@
 * Was made to work under Lubuntu-14.04
 * Is being tuned to work with Cygwin under Windows 7 
 	* Note: the Cygwin must be run as Administrtor when installing (for symbolic links creation) 
-* To perform the installation, run `install.sh` script 
+* To perform the installation run:  
+```
+$ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
+$ ./install.sh
+```
 
 ## Main configuration files
 
@@ -28,12 +32,12 @@
 * Custom prompt configuration: [viruca]()
 
 #### LXTerminial (Lubuntu)
-* Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors
+* Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors solely
 
 #### Tmux
 
 #### dircolors
-* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls`
+* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized)
 
 ## Basic commands / bindings
 
@@ -53,33 +57,8 @@
 `<C>-a r` - reload Tmux configuration while being in Tmux session  
 `<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 
-#### Tmux-sidebar
-
-`<C-a> <Tab>` - display the sidebar  
-`<C-a> <Backspace>` - display the sidebar and put focus on it  
-
 ## Installation:  
 
-`git clone git://github.com/vicrucann/dotvim.git ~/.vim`
 
-#### Create symlinks:  
 
-`ln -s ~/.vim/vimrc ~/.vimrc`  
-`ln -s ~/.vim/zshrc ~/.zshrc`  
-`ln -s ~/.vim/lxterminal.conf ~/.config/lxterminal/lxterminal.conf`  
-`ln -s ~/.vim/tmux.conf ~/.tmux.conf`
-ln -s ~/.vim/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
 
-#### Switch to the `~/.vim` directory, and fetch submodules:
-
-`cd ~/.vim`  
-`git submodule init`  
-`git submodule update`
-
-#### Original link  
-
-[Keep Vim settings and plugins in Git repo](http://dudarev.com/blog/keep-vim-settings-and-plugins-in-git-repo/)
-
-#### Install other packages  
-
-* [Tmux Sidebar](https://github.com/tmux-plugins/tmux-sidebar)
