@@ -12,10 +12,10 @@ lubuntu-dot-configs is my personal dot file repository which is under active dev
 
 These are solely examples, the end version might look slightly different.  
 
-![ex-git](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-git.png?raw=true "Git repo example")
+![ex-git](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-git.png?raw=true "Git repo example")  
 \* Inside modified git repository  
 
-![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")
+![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")  
 \* Editing with vim inside tmux session  
 
 ## Installation and platforms 
