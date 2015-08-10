@@ -1,6 +1,6 @@
 ## Overview
 
-lubuntu-dot-configs is my personal dot file repository which is under active development. The main criterias for my dot files are to be **lightweight** and **readable**. The latest stable version is accessible through versions; the master branch is a development branch. The configuration files include: 
+lubuntu-dot-configs is my personal dot file repository which is under active development. The main criterias for my dot files are to be **lightweight** and **readable**. The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include: 
 * LXTerminal - a lightweight Linux terminal
 * oh-my-zsh (planning to switch to more lightweight alternative)
 * tmux
