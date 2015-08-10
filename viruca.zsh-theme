@@ -13,9 +13,9 @@ function prompt_char {
     echo '○'
 }
 
-PROMPT='${ret_status}%{%F{64}%}%p %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}$(git_prompt_info)$(git_prompt_status)%{%F{244}%} $ % %{$reset_color%}'
+PROMPT='${ret_status}%{%F{64}%}%p %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}$(git_prompt_info)%{%F{244}%} $ % %{$reset_color%}'
 #[green]  path[orange] git_symbol[green] $[white]
-
+#$(git_prompt_status)
 ZSH_THEME_GIT_PROMPT_PREFIX="" # master {green}
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{125}%}*" # [magenta]
