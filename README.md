@@ -1,10 +1,26 @@
-## Installation requirements
+## Overview
+
+lubuntu-dot-configs is my personal dot file repository which is under active development. The latest stable version is accessible through versions; the master branch is a development branch. The configurations combines together: 
+* LXTerminal - a lightweight Linux terminal
+* Zsh 
+* oh-my-zsh (planning to switch to more lightweight alternative)
+* tmux
+* vim (customized for C++ development mainly)
+* Solarized color scheme
+* Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
+
+## Initial printscreens
+![ex-git](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-git.png?raw=true "Git repo example")
+![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")
+
+## Installation and platforms 
 * Was made to work under Lubuntu-14.04
 * Is being tuned to work with Cygwin under Windows 7 
 	* Note: the Cygwin must be run as Administrtor when installing (for symbolic links creation) 
 * To perform the installation run:  
 ```
 $ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
+$ git submodule update --init --recursive  
 $ ./install.sh
 ```
 
