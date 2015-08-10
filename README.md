@@ -1,8 +1,7 @@
 ## Overview
 
-lubuntu-dot-configs is my personal dot file repository which is under active development. The latest stable version is accessible through versions; the master branch is a development branch. The configurations combines together: 
+lubuntu-dot-configs is my personal dot file repository which is under active development. The latest stable version is accessible through versions; the master branch is a development branch. The configurations include: 
 * LXTerminal - a lightweight Linux terminal
-* Zsh 
 * oh-my-zsh (planning to switch to more lightweight alternative)
 * tmux
 * vim (customized for C++ development mainly)
@@ -10,8 +9,14 @@ lubuntu-dot-configs is my personal dot file repository which is under active dev
 * Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
 
 ## Initial printscreens
+
+These are solely examples, the end version might look slightly different.  
+
 ![ex-git](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-git.png?raw=true "Git repo example")
+\* Inside modified git repository  
+
 ![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")
+\* Editing with vim inside tmux session  
 
 ## Installation and platforms 
 * Was made to work under Lubuntu-14.04
