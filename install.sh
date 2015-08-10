@@ -19,6 +19,7 @@ rm -f ~/.config/lxterminal/lxterminal.conf
 rm -f ~/.tmux.conf
 rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme
 rm -f ~/.vim/template.cpp
+rm -f ~/.dircolors
 printf "Done\n\n"
 
 # create symbolic links
