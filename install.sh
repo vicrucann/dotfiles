@@ -11,57 +11,73 @@
 #printf "- LXTerminal\n"
 #printf "- dircolors (for commands such as ls)\n\n"
 
+# install Prezto
+# before installing Prezto, uninstall oh-my-zsh if any
+uninstall_oh_my_zsh
+
+# clone the repo
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 # remove previous config files, if any
 printf "Removing any existing config files...\n"
 rm -f ~/.vimrc
 rm -f ~/.zshrc
 rm -f ~/.config/lxterminal/lxterminal.conf
 rm -f ~/.tmux.conf
-rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme
+#rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme # obsolete since transfered to prezto
 rm -f ~/.vim/template.cpp
 rm -f ~/.dircolors
+rm -f ~/.zlogin
+rm -f ~/.zlogout
+rm -f ~/.zpreztorc
+rm -f ~/.zprofile
+rm -f ~/.zshenv
 printf "Done\n\n"
 
 # create symbolic links
 printf "Creating symbolic links...\n"
+# dotfiles to copy to $HOME
+FILES="zshrc tmux.conf vimrc dircolors zlogin zlogout zpreztorc zprofile zshenv"
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	printf "Linux detected\n"
-	ln -sv pwd/vimrc ~/.vimrc
-	ln -sv pwd/zshrc ~/.zshrc
+	for ifs in `echo $FILES`; do
+		ln -sv "$(pwd)/$ifs" "$HOME/.$ifs"
+	done
+	#ln -sv pwd/vimrc ~/.vimrc
+	#ln -sv pwd/zshrc ~/.zshrc
 	ln -sv pwd/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
-	ln -sv pwd/tmux.conf ~/.tmux.conf
-	ln -sv pwd/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
+	#ln -sv pwd/tmux.conf ~/.tmux.conf
+	#ln -sv pwd/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
 	ln -sv pwd/template.cpp ~/.vim/template.cpp
 elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 	printf "Cygwin detected\n"
 	# use cmd mklink
 	# files with $HOME destination
-	FILES="zshrc tmux.conf vimrc dircolors"
 	for ifs in `echo $FILES`; do
 		SP="$(pwd)/$ifs"
 		SH="$HOME/.$ifs"
 		STARGET="$(cygpath -w -p $SP)"
 		SLINK="$(cygpath -w -p $SH)"
-		cmd.exe /c mklink $SLINK $STARGET
+		/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
 	done
 	# files with other destinations:
 	SP="$(pwd)/lxterminal.conf"
 	SH="$HOME/.config/lxterminal/lxterminal.conf"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	cmd.exe /c mklink $SLINK $STARGET
+	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
 
 	SP="$(pwd)/viruca.zsh-theme"
 	SH="$HOME/.oh-my-zsh/themes/viruca.zsh-theme"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	cmd.exe /c mklink $SLINK $STARGET
+	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
 
 	SP="$(pwd)/template.cpp"
 	SH="$HOME/.vim/template.cpp"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
-	cmd.exe /c mklink $SLINK $STARGET
+	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
 else
 	printf "ERROR: current platform is not supported\n"
 	exit 1
