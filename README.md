@@ -46,7 +46,8 @@ $ ./install.sh
   * Reference search, e.g. variables, classes, functions - [cscope](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
   * Go to definition - [ctags](http://ctags.sourceforge.net/)
   * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-  * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)
+  * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)   
+    * clewn - debug support  
 
 #### zsh
 * Based on robbyrussel's [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)  
