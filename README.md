@@ -37,16 +37,16 @@ $ ./install.sh
 * File viewer: [NERDTree](https://github.com/scrooloose/nerdtree)
 * Status bar: [vim-airline](https://github.com/bling/vim-airline)
 * Working with codes: 
-  * Code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
-  * Syntax check - [syntastic](https://github.com/scrooloose/syntastic) 
-  * Enhanced C++ highlights - [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
+    * Code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
+    * Syntax check - [syntastic](https://github.com/scrooloose/syntastic) 
+    * Enhanced C++ highlights - [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 * Not installed, but planned to chose from to improve functionality:
-  * Switch between source and header file - [a.vim](http://www.vim.org/scripts/script.php?script_id=31)
-  * Snippets - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540) or [UltiSnips](http://www.vim.org/scripts/script.php?script_id=2715) or [c.vim](http://www.vim.org/scripts/script.php?script_id=213)
-  * Reference search, e.g. variables, classes, functions - [cscope](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
-  * Go to definition - [ctags](http://ctags.sourceforge.net/)
-  * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-  * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)   
+    * Switch between source and header file - [a.vim](http://www.vim.org/scripts/script.php?script_id=31)
+    * Snippets - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540) or [UltiSnips](http://www.vim.org/scripts/script.php?script_id=2715) or [c.vim](http://www.vim.org/scripts/script.php?script_id=213)
+    * Reference search, e.g. variables, classes, functions - [cscope](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
+    * Go to definition - [ctags](http://ctags.sourceforge.net/)
+    * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+    * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)   
     * clewn - debug support  
 
 #### zsh
