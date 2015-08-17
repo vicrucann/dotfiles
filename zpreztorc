@@ -1,9 +1,5 @@
 #
-# Sets Prezto options.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Prezto options.
 
 #
 # General
@@ -32,9 +28,11 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
   'history-substring-search' \
-  'git'
+  'prompt' \
+  'git' 
+
+# 'syntax-highlighting' \
 
 #
 # Editor
