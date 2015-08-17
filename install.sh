@@ -24,6 +24,7 @@ rm -f ~/.vimrc
 rm -f ~/.zshrc
 rm -f ~/.config/lxterminal/lxterminal.conf
 rm -f ~/.tmux.conf
+rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
 #rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme # obsolete since transfered to prezto
 rm -f ~/.vim/template.cpp
 rm -f ~/.dircolors
@@ -37,7 +38,7 @@ printf "Done\n\n"
 # create symbolic links
 printf "Creating symbolic links...\n"
 # dotfiles to copy to $HOME
-FILES="zshrc tmux.conf vimrc dircolors zlogin zlogout zpreztorc zprofile zshenv"
+FILES="zshrc tmux.conf vimrc dircolors zpreztorc zprofile zshenv"
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	printf "Linux detected\n"
 	for ifs in `echo $FILES`; do
@@ -49,6 +50,7 @@ if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	#ln -sv pwd/tmux.conf ~/.tmux.conf
 	#ln -sv pwd/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
 	ln -sv pwd/template.cpp ~/.vim/template.cpp
+	ln -sv pwd/prompt_viruca_setup ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
 elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 	printf "Cygwin detected\n"
 	# use cmd mklink
@@ -75,6 +77,12 @@ elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 
 	SP="$(pwd)/template.cpp"
 	SH="$HOME/.vim/template.cpp"
+	STARGET="$(cygpath -w -p $SP)"
+	SLINK="$(cygpath -w -p $SH)"
+	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
+	
+	SP="$(pwd)/prompt_viruca_setup"
+	SH="$HOME/.zprezto/modules/prompt/functions/prompt_viruca_setup"
 	STARGET="$(cygpath -w -p $SP)"
 	SLINK="$(cygpath -w -p $SH)"
 	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
