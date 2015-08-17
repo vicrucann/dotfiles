@@ -1,0 +1,49 @@
+function ret_status {
+	if [ $? -ne 0 ]; then
+		 echo "%{%F{125}%}>"
+	else
+		echo "%{%F{37}%}>"
+	fi
+}
+
+function prompt_char {
+	if is-true "$(git rev-parse --is-inside-work-tree 2> /dev/null)"; then
+		echo '±'
+	else
+		echo 'o'
+	fi
+}
+
+function prompt_viruca_precmd {
+	# Get Git repository information.
+	if (( $+functions[git-info] )); then
+		git-info
+	fi
+}
+
+function prompt_viruca_setup {
+	setopt LOCAL_OPTIONS
+	unsetopt XTRACE KSH_ARRAYS
+	prompt_opts=(cr percent subst)
+	
+	# Load required functions.
+	autoload -Uz add-zsh-hook
+
+	# Add hook for calling git_info before each command.
+	add-zsh-hook precmd prompt_viruca_precmd
+	
+	# Set git-info parameters.
+	zstyle ':prezto:module:git:info' verbose 'yes'
+	zstyle ':prezto:module:git:info:branch' format '%{%F{136}%}%b%f' # master[yellow]
+	zstyle ':prezto:module:git:info:clean' format '%{%F{61}%};%f' # [violet]
+	zstyle ':prezto:module:git:info:dirty' format '%{%F{125}%}*%f' # [magenta]
+	zstyle ':prezto:module:git:info:keys' format \
+		'prompt' '%b%C%D' \
+		'rprompt' ''
+	
+	PROMPT='$(ret_status) %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}${git_info:+${(e)git_info[prompt]}}%{%F{244}%} $ '
+	RPROMPT=''
+	#[green]  path[orange] git_symbol[green] git_dir[yellow] $[white]
+}
+
+prompt_viruca_setup "$@"

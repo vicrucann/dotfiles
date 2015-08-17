@@ -9,7 +9,7 @@
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # default settings
-FILES="zlogin zlogout zpreztorc zprofile zshenv"
+FILES="zpreztorc zprofile zshenv"
 for ifs in `echo $FILES`; do
 		SP="$(pwd)/$ifs"
 		SH="$HOME/.$ifs"
