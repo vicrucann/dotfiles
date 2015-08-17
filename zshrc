@@ -102,3 +102,4 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 eval `dircolors ~/.dircolors`
+LUBU="$HOME/github/lubuntu-dot-configs"
