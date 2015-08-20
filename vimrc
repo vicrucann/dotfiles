@@ -202,15 +202,15 @@ colorscheme solarized
 :make %:r | :cwindow
 :endfunction
 
-:function! C11_MAKE()
-:make %:r -std=c++11 | :cwindow
-:endfunction
+":function! C11_MAKE()
+":make %:r -std=c++11 | :cwindow
+":endfunction
 
 :nmap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 :imap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 
-:nmap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
-:imap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
+":nmap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
+":imap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 
 " Map <F5> to run 
 :nmap <F5> <Esc> :!./%:r<CR>
