@@ -54,7 +54,7 @@ set list listchars=tab:\ \ ,trail:·
 " Get rid of the delay when pressing O (for example)
 " "
 " http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
-"set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 " " Always show status bar
 set laststatus=2
@@ -68,11 +68,6 @@ set encoding=utf-8
 " " Autoload files that have changed outside of vim
 set autoread
 
-" " Use system clipboard
-" "
-" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
-" set clipboard+=unnamed
-"
 " " Don't show intro
 set shortmess+=I
 
@@ -94,16 +89,7 @@ set showmatch
 
 " " Set built-in file system explorer to use layout similar to the NERDTree
 " plugin
-"let g:netrw_liststyle=3
-
-" " Always highlight column 80 so it's easier to see where
-" " cutoff appears on longer screens
-" autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-" set colorcolumn=80
-
-" nice EOL (end of line) characters
-" set list
-" set listchars=tab:▸\ ,eol:¬
+let g:netrw_liststyle=3
 " }}}
 
 " PLUGINS {{{
@@ -123,6 +109,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()  " required by vundle
 filetype plugin indent on  " required by vundle
 
@@ -172,19 +159,22 @@ colorscheme solarized
 " NORMAL mode Ctrl+y then , <C-y,>
 
 " Git gutter
-"let g:gitgutter_enabled = 1
-"let g:gitgutter_eager = 0
-"let g:gitgutter_sign_column_always = 1
-"highlight clear SignColumn
+"let g:gitgutter_override_sign_column_highlight = 0
+"highlight SignColumn ctermbg=230
+"highlight GitGutterChange ctermfg=blue
+let g:gitgutter_enabled = 1
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
+highlight clear SignColumn
 
 " Searching the file system
-"map <leader>' :NERDTreeToggle<cr>
+map <leader>' :NERDTreeToggle<cr>
 
 " Tabularize
-"map <Leader>e :Tabularize /=<cr>
-"map <Leader>c :Tabularize /:<cr>
-"map <Leader>es :Tabularize /=\zs<cr>
-"map <Leader>cs :Tabularize /:\zs<cr>
+map <Leader>e :Tabularize /=<cr>
+map <Leader>c :Tabularize /:<cr>
+map <Leader>es :Tabularize /=\zs<cr>
+map <Leader>cs :Tabularize /:\zs<cr>
 
 " Camel Case Motion (for dealing with programming code)
 "map <silent> w <Plug>CamelCaseMotion_w
