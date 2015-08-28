@@ -15,13 +15,20 @@ fi
 
 ## }}}
 
+# Alias # {{{
+
+alias vi="vim"
+alias tmux="tmux -2"
+alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}" # tmux kill all sessions
+#alias ct="ctags -R --exclude=.git --exclude=node_modules"
+#alias dotfiles="ls -a | grep '^\.' | grep --invert-match '\.DS_Store\|\.$'"
+## }}}
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-alias tmux="tmux -2"
 
 # if you do a 'rm *', Zsh will give you a sanity check!
 setopt RM_STAR_WAIT
@@ -70,15 +77,4 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# User configuration
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 #eval `dircolors ~/.dircolors`
