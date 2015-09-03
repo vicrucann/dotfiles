@@ -112,7 +112,6 @@ printf "Installing other plugins using command line\n"
 printf "Done\n\n"
 
 # change to zsh
-chsh -s $(which zsh) 
-# to chonge from root to specific username, use
-# chsh -s /bin/zsh username
-
+# chsh -s $(which zsh) # not available anymore
+mkpasswd -c | sed -e 'sX/bashX/zshX'|tee -a /etc/passwd
+# taken from http://superuser.com/a/891728

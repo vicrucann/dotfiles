@@ -1,6 +1,6 @@
 ## List of bugs
 
-* when doing chsh - command not found
+* ~~when doing chsh - command not found~~ (resolved)
 * error: path cannot be specified when doing the symbolic links
 
 ## Things to do in the future
