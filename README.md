@@ -25,6 +25,7 @@ These are solely examples, the end version might look slightly different.
 * To perform the installation run:  
 ```
 $ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
+$ cd github/lubuntu-dot-configs
 $ git submodule update --init --recursive  
 $ ./install.sh
 ```
@@ -50,7 +51,7 @@ $ ./install.sh
     * clewn - debug support  
 
 #### zsh
-* Based on robbyrussel's [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)  
+* Based on Prezto  
 * Custom prompt configuration: [viruca](://github.com/vicrucann/lubuntu-dot-configs/blob/master/viruca.zsh-theme)
 
 #### LXTerminial (Lubuntu)
@@ -60,7 +61,7 @@ $ ./install.sh
 * Replaced some basic key bindings for easier reach
 
 #### dircolors
-* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized)
+* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized), right now is not activated
 
 ## Basic commands / bindings
 
