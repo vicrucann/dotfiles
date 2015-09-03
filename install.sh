@@ -13,7 +13,7 @@
 
 # install Prezto
 # before installing Prezto, uninstall oh-my-zsh if any
-uninstall_oh_my_zsh
+#uninstall_oh_my_zsh
 
 # clone the repo
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -112,7 +112,7 @@ printf "Installing other plugins using command line\n"
 printf "Done\n\n"
 
 # change to zsh
-# chsh -s $(which zsh) 
+chsh -s $(which zsh) 
 # to chonge from root to specific username, use
 # chsh -s /bin/zsh username
 
