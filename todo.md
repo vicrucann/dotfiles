@@ -6,3 +6,4 @@
 ## Things to do in the future
 
 * include in README: list of necessary and recommended cygwin libs to load, e.g. `chsh`, `git`, `vim`, etc.
+* check if `oh-me-zsh` exists and if yes, uninstall it
