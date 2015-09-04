@@ -21,13 +21,21 @@ These are solely examples, the end version might look slightly different.
 ## Installation and platforms 
 * Was made to work under Lubuntu-14.04
 * Is being tuned to work with Cygwin under Windows 7 
-	* Note: the Cygwin must be run as Administrtor when installing (for symbolic links creation) 
+	* Note: the Cygwin must be **run as Administrtor** when installing (for symbolic links creation) 
 * To perform the installation run:  
 ```
 $ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
 $ cd github/lubuntu-dot-configs
 $ git submodule update --init --recursive  
+```
+Then for Cygwin platform run:  
+```
 $ ./install.sh
+```
+For Linux, it has to be run under `sudo` and bash must be enforced:  
+```
+$ chmod +x install.sh
+$ sudo bash install.sh
 ```
 
 ## Configuration files

@@ -13,10 +13,17 @@
 
 # install Prezto
 # before installing Prezto, uninstall oh-my-zsh if any
-#uninstall_oh_my_zsh
+if test -d $HOME/.oh-my-zsh; then
+    printf "Uninstalling oh-my-zsh\n"
+    rm -f -r $HOME/.oh-my-zsh
+fi
 
-# clone the repo
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# clone the prezto repo
+read -p "(Re-)Install Prezto? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
 
 # remove previous config files, if any
 printf "Removing any existing config files...\n"
@@ -44,13 +51,9 @@ if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	for ifs in `echo $FILES`; do
 		ln -sv "$(pwd)/$ifs" "$HOME/.$ifs"
 	done
-	#ln -sv pwd/vimrc ~/.vimrc
-	#ln -sv pwd/zshrc ~/.zshrc
-	ln -sv pwd/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
-	#ln -sv pwd/tmux.conf ~/.tmux.conf
-	#ln -sv pwd/viruca.zsh-theme ~/.oh-my-zsh/themes/viruca.zsh-theme
-	ln -sv pwd/template.cpp ~/.vim/template.cpp
-	ln -sv pwd/prompt_viruca_setup ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
+	ln -sv $(pwd)/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
+	ln -sv $(pwd)/template.cpp ~/.vim/template.cpp
+	ln -sv $(pwd)/prompt_viruca_setup ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
 elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
 	printf "Cygwin detected\n"
 	# use cmd mklink
@@ -93,25 +96,40 @@ fi
 printf "Done\n\n"
 
 # .vim directory and plugins
-printf "Checking for .vim directory\n"
-mkdir -p ~/.vim
-if [ $? -ne 0 ]; then
-  printf "ERROR: could not create ~/.vim directory, check if you have sufficient rights\n"
-  exit 1
+# delete any previous vim settings
+printf "The scrip is about to remove any current vim settings\n"
+read -p "Are you sure to overwrite the vim settings? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    printf "Checking for .vim directory\n"
+    mkdir -p ~/.vim
+    if [ $? -ne 0 ]; then
+        printf "ERROR: could not create ~/.vim directory, check if you have sufficient rights\n"
+    exit 1
+    fi
+    printf "Done\n\n"
+    
+    printf "Loading and installing the necessary VIM plugins using Vundle\n"
+    printf "Clean the Vundle folder, if needed\n"
+    rm -r -f ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
+    printf "Done\n\n"
+
+    printf "Installing other plugins using command line\n"
+    printf "Done\n\n"
+else
+    printf "The vim setup is skipped\n"
 fi
-printf "Done\n\n"
-
-printf "Loading and installing the necessary VIM plugins using Vundle\n"
-printf "Clean the Vundle folder, if needed\n"
-rm -r -f ~/.vim/bundle/Vundle.vim
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-printf "Done\n\n"
-
-printf "Installing other plugins using command line\n"
-printf "Done\n\n"
 
 # change to zsh
-# chsh -s $(which zsh) # not available anymore
-mkpasswd -c | sed -e 'sX/bashX/zshX'|tee -a /etc/passwd
-# taken from http://superuser.com/a/891728
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    chsh -s $(which zsh) 
+elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
+    mkpasswd -c | sed -e 'sX/bashX/zshX'|tee -a /etc/passwd
+    # taken from http://superuser.com/a/891728
+else
+	printf "ERROR: current platform is not supported\n"
+	exit 1
+fi
+printf "Done\n\n"
