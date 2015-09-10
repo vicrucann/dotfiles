@@ -210,6 +210,10 @@ map <Leader>cs :Tabularize /:\zs<cr>
 :nmap <F5> <Esc> :!./%:r<CR>
 :imap <F5> <Esc> :!./%:r<CR>
 
+" Map <F4> to open NERDTree
+:nmap <F4> <Esc> :NERDTree<CR>
+:imap <F4> <Esc> :NERDTree<CR>
+
 " }}}
 
 " COMMANDS {{{
@@ -271,7 +275,7 @@ endfun
 autocmd FilterWritePre * call SetDiffColors()
 
 " Keep NERDTree open by default
-autocmd VimEnter * NERDTree
-autocmd BufWinEnter * NERDTreeMirror
+" autocmd VimEnter * NERDTree
+" autocmd BufWinEnter * NERDTreeMirror
 
 " }}}
