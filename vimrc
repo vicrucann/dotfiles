@@ -90,6 +90,7 @@ set showmatch
 " " Set built-in file system explorer to use layout similar to the NERDTree
 " plugin
 let g:netrw_liststyle=3
+
 " }}}
 
 " PLUGINS {{{
@@ -169,6 +170,9 @@ highlight clear SignColumn
 
 " Searching the file system
 map <leader>' :NERDTreeToggle<cr>
+
+" NERDTree special characters are not used 
+let g:NERDTreeDirArrows=0
 
 " Tabularize
 map <Leader>e :Tabularize /=<cr>
@@ -265,5 +269,9 @@ fun! SetDiffColors()
     highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
 endfun
 autocmd FilterWritePre * call SetDiffColors()
+
+" Keep NERDTree open by default
+autocmd VimEnter * NERDTree
+autocmd BufWinEnter * NERDTreeMirror
 
 " }}}

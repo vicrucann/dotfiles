@@ -14,6 +14,10 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 #export MC_SKIN="$HOME/.mc/skins/solarized.ini"
+
+export LC_ALL=en_US.utf-8
+export LANG="$LC_ALL"
+
 ## }}}
 
 # Alias # {{{
