@@ -11,4 +11,4 @@
 * color scheme for mc, and then edit `install.sh` so that to put dot file to `~/.mc/skins`; to select, use `mc -S skinname`
 * `chsh` for linux, `passwd` for cygwin - add if-else statements
 * split `install.sh` into parts and then update `README` to run those parts one after another (for better management of any possible errors)
-*  
+* mc editor: is it possible to change it to vim?  

@@ -49,7 +49,7 @@ set shiftwidth=4
 set number
 "
 " " Highlight tailing whitespace
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
 
 " Get rid of the delay when pressing O (for example)
 " "
