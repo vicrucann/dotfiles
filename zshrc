@@ -13,6 +13,7 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+#export MC_SKIN="$HOME/.mc/skins/solarized.ini"
 ## }}}
 
 # Alias # {{{
@@ -77,4 +78,4 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-#eval `dircolors ~/.dircolors`
+eval `dircolors ~/.dircolors`
