@@ -104,7 +104,16 @@ filetype plugin on
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'       " required by vundle
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 filetype plugin indent on
 " required by vundle - end
