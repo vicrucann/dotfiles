@@ -1,5 +1,7 @@
 " SETTINGS {{{
 
+set ff=unix
+
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
 
@@ -98,21 +100,14 @@ let g:netrw_liststyle=3
 filetype plugin on
 
 " Vundle settings
-filetype off  " required to use with Vundle
+" required to use with Vundle - begin
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'       " required by vundle
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()  " required by vundle
-filetype plugin indent on  " required by vundle
+Plugin 'gmarik/Vundle.vim'
+call vundle#end()
+filetype plugin indent on
+" required by vundle - end
 
 " Solarized color scheme
 set t_Co=256
@@ -126,7 +121,6 @@ colorscheme solarized
 "let g:ctrlp_show_hidden=1
 "let g:ctrlp_working_path_mode=0
 "let g:ctrlp_max_height=30
-
 " CtrlP -> override <C-o> to provide options for how to open files
 "let g:ctrlp_arg_map = 1
 
@@ -171,7 +165,7 @@ highlight clear SignColumn
 " Searching the file system
 map <leader>' :NERDTreeToggle<cr>
 
-" NERDTree special characters are not used 
+" NERDTree special characters are not used
 let g:NERDTreeDirArrows=0
 
 " Tabularize
@@ -206,7 +200,7 @@ map <Leader>cs :Tabularize /:\zs<cr>
 ":nmap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 ":imap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 
-" Map <F5> to run 
+" Map <F5> to run
 :nmap <F5> <Esc> :!./%:r<CR>
 :imap <F5> <Esc> :!./%:r<CR>
 

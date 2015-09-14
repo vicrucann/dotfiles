@@ -11,6 +11,43 @@
 #printf "- LXTerminal\n"
 #printf "- dircolors (for commands such as ls)\n\n"
 
+# some functions first
+symlinker() {
+# a function that performs a creation of symlinks
+# in linux and windows (cygwin or mingw)
+# input parameters:
+# full_path_of_target full_path_of_link
+
+ptarget=$1
+plink=$2
+
+printf "\nLink to be created: for file\n%s\n and with link to\n%s\n\n" $ptarget $plink
+
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    printf "Linux detedted\n"
+    ln -sv $ptarget $plink
+elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
+    printf "Cygwin detected\n"
+    STARGET="$(cygpath -w -p $ptarget)"
+    SLINK="$(cygpath -w -p $plink)"
+    /cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
+elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
+    printf "MinGW detected\n"
+    destinn=$(dirname "${plink}")
+    mkdir -p $destinn
+    orign=$(dirname "${ptarget}")
+    flname=$(basename "${ptarget}")
+    flname2=$(basename "${plink}")
+    SLINK="$({ cd 2>/dev/null $destinn && pwd -W ||
+    echo $destinn | sed 's|^/\([a-z]\)/|\1:/|'; } | sed 's|/|\\|g')"
+    STARGET="$({ cd $orign && pwd -W; } | sed 's|/|\\|g')"
+    c:/windows/system32/cmd.exe //c mklink $SLINK\\$flname2 $STARGET\\$flname
+else
+    printf "ERROR: current platform is not supported\n"
+    exit 1
+fi
+}
+
 # install Prezto
 # before installing Prezto, uninstall oh-my-zsh if any
 if test -d $HOME/.oh-my-zsh; then
@@ -23,75 +60,49 @@ read -p "(Re-)Install Prezto? " -n 1 -r
 echo 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  if [ $? -ne 0 ]; then
+    printf "ERROR: could not install prezto: is git installed? is there internet connection?\n"
+    # git for MinGW:
+    # add similar line to the C:\MinGW\msys\1.0\etc\profile
+    # export PATH=$PATH:/c/Program\ Files/Git/bin
+    exit 1
+  fi
 fi
 
 # remove previous config files, if any
-printf "Removing any existing config files...\n"
-rm -f ~/.vimrc
-rm -f ~/.zshrc
-rm -f ~/.config/lxterminal/lxterminal.conf
-rm -f ~/.tmux.conf
-rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
-#rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme # obsolete since transfered to prezto
-rm -f ~/.vim/template.cpp
-rm -f ~/.dircolors
-rm -f ~/.zlogin
-rm -f ~/.zlogout
-rm -f ~/.zpreztorc
-rm -f ~/.zprofile
-rm -f ~/.zshenv
+read -p "Remove any previous config files? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    printf "Removing any existing config files...\n"
+    rm -f ~/.vimrc
+    rm -f ~/.zshrc
+    rm -f ~/.config/lxterminal/lxterminal.conf
+    rm -f ~/.tmux.conf
+    rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
+    #rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme # obsolete since transfered to prezto
+    rm -f ~/.vim/template.cpp
+    rm -f ~/.dircolors
+    rm -f ~/.zlogin
+    rm -f ~/.zlogout
+    rm -f ~/.zpreztorc
+    rm -f ~/.zprofile
+    rm -f ~/.zshenv
+fi
 printf "Done\n\n"
 
 # create symbolic links
-printf "Creating symbolic links...\n"
-# dotfiles to copy to $HOME
-FILES="zshrc tmux.conf vimrc dircolors zpreztorc zprofile zshenv"
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	printf "Linux detected\n"
-	for ifs in `echo $FILES`; do
-		ln -sv "$(pwd)/$ifs" "$HOME/.$ifs"
-	done
-	ln -sv $(pwd)/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
-	ln -sv $(pwd)/template.cpp ~/.vim/template.cpp
-	ln -sv $(pwd)/prompt_viruca_setup ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
-elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
-	printf "Cygwin detected\n"
-	# use cmd mklink
-	# files with $HOME destination
-	for ifs in `echo $FILES`; do
-		SP="$(pwd)/$ifs"
-		SH="$HOME/.$ifs"
-		STARGET="$(cygpath -w -p $SP)"
-		SLINK="$(cygpath -w -p $SH)"
-		/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
-	done
-	# files with other destinations:
-	SP="$(pwd)/lxterminal.conf"
-	SH="$HOME/.config/lxterminal/lxterminal.conf"
-	STARGET="$(cygpath -w -p $SP)"
-	SLINK="$(cygpath -w -p $SH)"
-	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
-
-	SP="$(pwd)/viruca.zsh-theme"
-	SH="$HOME/.oh-my-zsh/themes/viruca.zsh-theme"
-	STARGET="$(cygpath -w -p $SP)"
-	SLINK="$(cygpath -w -p $SH)"
-	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
-
-	SP="$(pwd)/template.cpp"
-	SH="$HOME/.vim/template.cpp"
-	STARGET="$(cygpath -w -p $SP)"
-	SLINK="$(cygpath -w -p $SH)"
-	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
-	
-	SP="$(pwd)/prompt_viruca_setup"
-	SH="$HOME/.zprezto/modules/prompt/functions/prompt_viruca_setup"
-	STARGET="$(cygpath -w -p $SP)"
-	SLINK="$(cygpath -w -p $SH)"
-	/cygdrive/c/windows/system32/cmd.exe /c mklink $SLINK $STARGET
-else
-	printf "ERROR: current platform is not supported\n"
-	exit 1
+read -p "Overwrite symbolic links? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    printf "Creating symbolic links...\n"
+    # dotfiles to copy to $HOME
+    FILES="zshrc tmux.conf vimrc dircolors zpreztorc zprofile zshenv"
+    for ifs in `echo $FILES`; do
+        symlinker "$(pwd)/$ifs" "$HOME/.$ifs"
+    done
+    symlinker "$(pwd)/lxterminal.conf" "$HOME/.config/lxterminal/lxterminal.conf"
+    symlinker "$(pwd)/template.cpp" "$HOME/.vim/template.cpp"
+    symlinker "$(pwd)/prompt_viruca_setup" "$HOME/.zprezto/modules/prompt/functions/prompt_viruca_setup"
 fi
 printf "Done\n\n"
 
