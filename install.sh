@@ -139,6 +139,11 @@ if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
     mkpasswd -c | sed -e 'sX/bashX/zshX'|tee -a /etc/passwd
     # taken from http://superuser.com/a/891728
+elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
+    printf "chsh is not supported in MinGW. \n"
+    printf "zsh is not avail at MinGW neither. \n"
+    printf "In order to complete the setupt, you may proceede by adding the next line in your ~/.bashrc profile at the beginning: \n"
+    printf "exec zsh\n"
 else
 	printf "ERROR: current platform is not supported\n"
 	exit 1

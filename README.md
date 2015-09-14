@@ -22,6 +22,8 @@ These are solely examples, the end version might look slightly different.
 * Was made to work under Lubuntu-14.04
 * Is being tuned to work with Cygwin under Windows 7 
 	* Note: the Cygwin must be **run as Administrtor** when installing (for symbolic links creation) 
+* Is being tested to run with MinGW, Windows 7
+    * Note: before doing `git clone ...`, make sure the git global setting is put to `git config --global core.autocrlf input` in order to avoid end-of-line `^M` error
 * To perform the installation run:  
 ```
 $ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
