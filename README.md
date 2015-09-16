@@ -1,11 +1,12 @@
 ## Overview
 
-lubuntu-dot-configs is my personal dot file repository which is under active development. The main criterias for my dot files are to be **lightweight** and **readable**. The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include: 
+lubuntu-dot-configs is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files are to be **lightweight**, **readable** and somewhat **minimalistic** while providing the necessary functionality. The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include: 
 * LXTerminal - a lightweight Linux terminal
 * oh-my-zsh (planning to switch to more lightweight alternative)
 * tmux
 * vim (customized for C++ development mainly)
 * Solarized color scheme
+* gitconfig file
 * Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
 
 ## Initial printscreens
