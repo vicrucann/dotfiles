@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file
+# Edit the parameters
+[user]
+    name = Victoria Rudakova
+    email = vicrucann@gmail.com
+[core]
+    autocrlf = input
+    editor = vim
+[github]
+    user = vicrucann
