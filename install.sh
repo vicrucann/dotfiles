@@ -3,7 +3,7 @@
 # Suggest to pull submodules
 # Create all the necessary symbolic links
 
-# general info 
+# general info
 #printf "This script will install Lubuntu dot file configurations, all of which are unified to use Solarized color scheme:\n"
 #printf "- vim\n"
 #printf "- zsh\n"

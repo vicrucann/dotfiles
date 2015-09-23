@@ -40,6 +40,13 @@ For Linux, it has to be run under `sudo` and bash must be enforced:
 $ chmod +x install.sh
 $ sudo bash install.sh
 ```
+#### Troubleshooting
+
+One of the most common problems when trying to run `install.sh` - line encoding is read wrongly by Cygwin (e.g. it treats the file encoding as `dos`, while it is supposed to be `unix`). One of the ways to change to the correct file encoding is:
+1. Open the `install.sh` in vim - `vim install.sh`
+2. In Vim, assign the correct file encoding to the file - `:w ++ff=unix`
+3. Now close the file - `:q` and try to run `install.sh` again 
+
 
 ## Configuration files
 
