@@ -49,6 +49,8 @@ path=(
 
 lubu="$HOME/github/lubuntu-dot-configs"
 algs="$HOME/github/codalgs/cforce"
+insitu="$HOME/github/InSitu"
+
 
 #
 # Less
