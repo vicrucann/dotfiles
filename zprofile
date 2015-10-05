@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -49,7 +49,7 @@ path=(
 
 lubu="$HOME/github/lubuntu-dot-configs"
 algs="$HOME/github/codalgs/cforce"
-insitu="$HOME/github/InSitu"
+insitu="$HOME/github/dura-europos-insitu"
 
 
 #
