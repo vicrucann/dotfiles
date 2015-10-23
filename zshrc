@@ -4,10 +4,18 @@ export GITHUB_USER="vicrucann"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPAGER="less -X" # sceen is not cleared after quitting the man page
 export EDITOR="vim"
+
 # some development variables, OpenSceneGraph lib
-export PATH=${PATH}:/$HOME/github/OSG-build/bin
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/$HOME/github/OSG-build/lib
-export OSG_FILE_PATH=$HOME/OSG-data:/$HOME/OSG-data/Images
+#export OPENTHREADS_INC_DIR="/usr/local/OpenThreads/include"
+#export OPENTHREADS_LIB_DIR="/usr/local/OpenThreads/bin"
+export COMPILE_EXAMPLES=yes
+export COMPILE_INTROSPECTION=no
+# export GDAL_INSTALLED=yes
+#export PATH="$OPENTHREADS_LIB_DIR:$PATH"
+#export PATH="PRODUCER_LIB_DIR:$PATH"
+export PATH="/usr/local/OpenSceneGraph/bin:/usr/local/OpenSceneGraph:$PATH"
+export LD_LIBRARY_PATH="/usr/local/OpenSceneGraph/lib:$LD_LIBRARY_PATH"
+export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/data/Images"
 
 # allow terminal to support 256 color schemes
 if [[ $TERM == xterm ]]; then
