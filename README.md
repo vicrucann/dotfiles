@@ -1,15 +1,15 @@
 ## Overview
 
-`lubuntu-dot-configs` is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files is to be **minimalistic** while providing the necessary functionality. 
+`lubuntu-dot-configs` is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files is to be **minimalistic** (and therefore lightweight) while providing the necessary functionality. The current configuration was made and works for an old and slow PC (write specs) under Lubuntu-14.04. 
 
 The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include settings for: 
 * LXTerminal (also works for Cygwin terminal)
-* ~oh-my-zsh~ prezto zsh
+* ~~oh-my-zsh~~ prezto zsh
 * tmux - terminal multiplier
 * vim (customized for C++ and Qt development mainly)
 * git
 
-Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
+Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7.
 
 ## Initial printscreens
 
@@ -21,14 +21,26 @@ These are solely examples, the end version might look slightly different.
 ![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")  
 \* Editing with vim inside tmux session  
 
-## Installation and platforms 
+## Platforms
 
-* Was made to work under Lubuntu-14.04
-* Is being tuned to work with Cygwin under Windows 7 
+* Was made to work under **Lubuntu**-14.04
+* Is being tuned to work with **Cygwin** under Windows 7 
 	* Note: the Cygwin must be **run as Administrtor** when installing (for symbolic links creation) 
-* Is being tested to run with MinGW, Windows 7
+* Is being tested to run with **MinGW**, Windows 7
     * Note: before doing `git clone ...`, make sure the git global setting is put to `git config --global core.autocrlf input` in order to avoid end-of-line `^M` error
-    * MinGW might not support all vim the functionalities
+    * MinGW does not support `zsh` and `chsh` so it will have a very limited functionality
+
+## Requirements
+Most of the packages are present on Linux (Lubuntu) by default. For the Cygwin, make sure you include in your download:
+* `git`
+* `zsh`
+* `chsh`
+* `vim`
+* `tmux`
+* `mc`
+* ?
+
+## Installation  
 
 To perform the download, run from terminal:  
 ```
@@ -87,21 +99,30 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 
 ## Basic commands / bindings
 
+#### ZSH
+###### Environment variables
+* `$lubu` is the path for the `~/github/lubuntu-dot-configs`
+
+###### Aliases
+
+
 #### Tmux
 
 `tmux new -s tmname` - attach the new tmux session named `tmname`  
-`<C>-a |` - split the screen in half vertically  
-`<C>-a -` - split the pane in half horizontally  
-`<C>-a` - jump the the next pane  
-`<C>-d` - close current window  
-`<C>-a c` - open up another window  
-`<C-a> n` - go to the next window  
-`<C>-a d` - disconnect from Tmux  
+`<C>a |` - split the screen in half vertically  
+`<C>a -` - split the pane in half horizontally  
+`<C>a h` or `<C>a j` or `<C>a k` or `<C>a l` - jump the between the panes   
+`<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
+`<C>a H` or `<C>a J` or `<C>a K` or `<C>a L` - resize the panes   
+`<C>a <tab>` or `<C>a <backspace>` - toggle/untoggle and bring focus to sidebar with directory tree  
+`<C>a r` - reload the current tmux config  
+`<C>d` - close current window  
+`<C>a c` - open up another window  
+`<C>a n` - go to the next window  
+`<C>a d` - disconnect from Tmux  
 `$ tmux ls` - in terminal: check what Tmux sessions are running  
 `$ tmux attach -t tmname` - in terminal: attach the session `tmname` back  
 `$ tmux kill-session -t tmname` - kill the `tmname` session  
-`<C>-a r` - reload Tmux configuration while being in Tmux session  
-`<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 
 
 
