@@ -1,13 +1,15 @@
 ## Overview
 
-lubuntu-dot-configs is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files are to be **lightweight**, **readable** and somewhat **minimalistic** while providing the necessary functionality. The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include: 
-* LXTerminal - a lightweight Linux terminal
-* oh-my-zsh (planning to switch to more lightweight alternative)
-* tmux
-* vim (customized for C++ development mainly)
-* Solarized color scheme
-* gitconfig file
-* Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
+`lubuntu-dot-configs` is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files is to be **minimalistic** while providing the necessary functionality. 
+
+The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include settings for: 
+* LXTerminal (also works for Cygwin terminal)
+* ~oh-my-zsh~ prezto zsh
+* tmux - terminal multiplier
+* vim (customized for C++ and Qt development mainly)
+* git
+
+Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7
 
 ## Initial printscreens
 
@@ -20,18 +22,21 @@ These are solely examples, the end version might look slightly different.
 \* Editing with vim inside tmux session  
 
 ## Installation and platforms 
+
 * Was made to work under Lubuntu-14.04
 * Is being tuned to work with Cygwin under Windows 7 
 	* Note: the Cygwin must be **run as Administrtor** when installing (for symbolic links creation) 
 * Is being tested to run with MinGW, Windows 7
     * Note: before doing `git clone ...`, make sure the git global setting is put to `git config --global core.autocrlf input` in order to avoid end-of-line `^M` error
-* To perform the installation run:  
+    * MinGW might not support all vim the functionalities
+
+To perform the download, run from terminal:  
 ```
 $ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
 $ cd github/lubuntu-dot-configs
 $ git submodule update --init --recursive  
 ```
-Then for Cygwin platform run:  
+The installation command for Cygwin (Cygwin must be run under administrator rights):  
 ```
 $ ./install.sh
 ```
@@ -46,7 +51,6 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 1. Open the `install.sh` in vim - `vim install.sh`
 2. In Vim, assign the correct file encoding to the file - `:w ++ff=unix`
 3. Now close the file - `:q` and try to run `install.sh` again 
-
 
 ## Configuration files
 
@@ -76,10 +80,10 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 * Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors solely
 
 #### Tmux
-* Replaced some basic key bindings for easier reach
+* Replaced some basic key bindings for easier reach, e.g., `<C>b` is replaced by `<C>a`
 
 #### dircolors
-* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized), right now is not activated
+* Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized)
 
 ## Basic commands / bindings
 
