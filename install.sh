@@ -79,7 +79,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rm -f ~/.config/lxterminal/lxterminal.conf
     rm -f ~/.tmux.conf
     rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
-    #rm -f ~/.oh-my-zsh/themes/viruca.zsh-theme # obsolete since transfered to prezto
     rm -f ~/.vim/template.cpp
     rm -f ~/.dircolors
     rm -f ~/.zlogin
