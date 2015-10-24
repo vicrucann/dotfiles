@@ -114,9 +114,21 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
+"installation
 call vundle#end()
 filetype plugin indent on
 " required by vundle - end
+
+" Syntastic 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Solarized color scheme
 set t_Co=256
@@ -143,25 +155,6 @@ colorscheme solarized
 " CtrlP -> directories to ignore when fuzzy finding
 "let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
 
-" Ack (uses Ag behind the scenes)
-"let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" Airline (status line)
-"let g:airline_powerline_fonts = 1
-
-" Gist authorisation settings
-"let g:github_user = $GITHUB_USER
-"let g:github_token = $GITHUB_TOKEN
-"let g:gist_detect_filetype = 1
-"let g:gist_open_browser_after_post = 1
-" Related plugins:
-" https://github.com/mattn/webapi-vim
-" https://github.com/vim-scripts/Gist.vim
-" https://github.com/tpope/vim-fugitive
-
-" HTML generation using 'emmet-vim'
-" NORMAL mode Ctrl+y then , <C-y,>
-
 " Git gutter
 "let g:gitgutter_override_sign_column_highlight = 0
 "highlight SignColumn ctermbg=230
@@ -177,12 +170,6 @@ map <leader>' :NERDTreeToggle<cr>
 " NERDTree special characters are not used
 let g:NERDTreeDirArrows=0
 
-" Tabularize
-map <Leader>e :Tabularize /=<cr>
-map <Leader>c :Tabularize /:<cr>
-map <Leader>es :Tabularize /=\zs<cr>
-map <Leader>cs :Tabularize /:\zs<cr>
-
 " Camel Case Motion (for dealing with programming code)
 "map <silent> w <Plug>CamelCaseMotion_w
 "map <silent> b <Plug>CamelCaseMotion_b
@@ -195,21 +182,16 @@ map <Leader>cs :Tabularize /:\zs<cr>
 " BINDINGS {{{
 
 " Map <F9> to make command
+" for single-file projects only
 :function! C_MAKE()
 :make %:r | :cwindow
 :endfunction
 
-":function! C11_MAKE()
-":make %:r -std=c++11 | :cwindow
-":endfunction
-
 :nmap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 :imap <F9> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
 
-":nmap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
-":imap <F10> <Esc> :w<CR> :let rowm=line('.')<CR> :let colm=col('.')<CR> :execute C11_MAKE()<CR> :source $HOME/.vimrc<CR> :call cursor(rowm, colm)<CR>
-
 " Map <F5> to run
+" for sinle-file projects only
 :nmap <F5> <Esc> :!./%:r<CR>
 :imap <F5> <Esc> :!./%:r<CR>
 
@@ -276,9 +258,5 @@ fun! SetDiffColors()
     highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
 endfun
 autocmd FilterWritePre * call SetDiffColors()
-
-" Keep NERDTree open by default
-" autocmd VimEnter * NERDTree
-" autocmd BufWinEnter * NERDTreeMirror
 
 " }}}

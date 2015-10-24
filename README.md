@@ -69,7 +69,7 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 #### Vim plugins
 * Plugin management: [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Color scheme: [Solarized](https://github.com/altercation/vim-colors-solarized)
-* File viewer: [NERDTree](https://github.com/scrooloose/nerdtree)
+* File viewer: [NERDTree](https://github.com/scrooloose/nerdtree) - maybe will be replaced by [CtrlP](https://github.com/kien/ctrlp.vim)
 * Status bar: [vim-airline](https://github.com/bling/vim-airline)
 * Working with codes: 
     * Code comments - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 
@@ -80,7 +80,7 @@ One of the most common problems when trying to run `install.sh` - line encoding 
     * Snippets - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540) or [UltiSnips](http://www.vim.org/scripts/script.php?script_id=2715) or [c.vim](http://www.vim.org/scripts/script.php?script_id=213)
     * Reference search, e.g. variables, classes, functions - [cscope](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
     * Go to definition - [ctags](http://ctags.sourceforge.net/)
-    * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+    * Code completion - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe); or more on [C++ code completion](http://vim.wikia.com/wiki/VimTip1608)
     * Class navigation - [taglist](http://vim-taglist.sourceforge.net/) or [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465)   
     * clewn - debug support  
 
