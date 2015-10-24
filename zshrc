@@ -10,6 +10,7 @@ export OPENTHREADS_INC_DIR="/usr/local/include"
 export OPENTHREADS_LIB_DIR="/usr/local/lib64:/usr/local/lib"
 export PATH="$OPENTHREADS_LIB_DIR:$PATH"
 export LD_LIBRARY_PATH="/usr/local/lib64:/usr/local/lib:$LD_LIBRARY_PATH"
+# export COMPILE_INTROSPECTION=no # uncomment for cygwin
 export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/data/Images"
 
 # allow terminal to support 256 color schemes
