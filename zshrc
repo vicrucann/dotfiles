@@ -14,6 +14,9 @@ export LD_LIBRARY_PATH="/usr/local/lib64:/usr/local/lib:$LD_LIBRARY_PATH"
 # export COMPILE_INTROSPECTION=no # uncomment for cygwin
 export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/data/Images"
 
+# Qt5
+export QT5PREFIX=/opt/Qt/5.5/gcc_64
+
 # allow terminal to support 256 color schemes
 if [[ $TERM == xterm ]]; then
     export TERM="xterm-256color"
@@ -56,3 +59,5 @@ COMPLETION_WAITING_DOTS="true"
 # enable dircolors for ls and such
 eval `dircolors ~/.dircolors`
 ## }}}
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
