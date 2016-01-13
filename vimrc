@@ -129,7 +129,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_include_dirs = ['/opt/Qt/5.5/gcc_64', '/opt/Qt/5.5/gcc_64/include/QtCore', '/opt/Qt/5.5/gcc_64/include/QtGui', '/opt/Qt/5.5/gcc_64/include/QtOpenGL', '/opt/Qt/5.5/gcc_64/include/QtWidgets']
+let g:syntastic_cpp_config_file = ['~/.syntastic_cpp_config_file']
 
 " Solarized color scheme
 set t_Co=256

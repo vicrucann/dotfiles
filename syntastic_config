@@ -1,0 +1,13 @@
+# Qt include paths
+-I/opt/Qt/5.5/gcc_64
+-I/opt/Qt/5.5/gcc_64/include/QtCore
+-I/opt/Qt/5.5/gcc_64/include/QtGui
+-I/opt/Qt/5.5/gcc_64/include/QtOpenGL
+-I/opt/Qt/5.5/gcc_64/include/QtWidgets
+
+# OSG include paths
+-I/usr/local/include/osg
+-I/usr/local/include/osgDB
+-I/usr/local/include/osgGA
+-I/usr/local/include/osgUtil
+-I/usr/local/include/osgViewer
