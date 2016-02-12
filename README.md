@@ -1,68 +1,115 @@
 ## Overview
 
-`lubuntu-dot-configs` is my personal dot file repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change drastically over time. The main criterias for my dot files is to be **minimalistic** (and therefore lightweight) while providing the necessary functionality. The current configuration was made and works for an old and slow PC (write specs) under Lubuntu-14.04. 
+This is my personal dotfile repository which is under active development. I am still trying to figure out the best software/plugins to use, so things may change over time. The main criterias for my dot files is to be **minimalistic** (and therefore lightweight) while providing the necessary functionality. The current configuration was made and works for an old and slow PC under Lubuntu-14.04. 
 
 The latest stable version is accessible through releases; the master branch is a development branch. The configuration files include settings for: 
-* LXTerminal (also works for Cygwin terminal)
+
+* LXTerminal (also works for Cygwin terminal): color sceme, command line format, etc.
 * ~~oh-my-zsh~~ prezto zsh
 * tmux - terminal multiplier
 * vim (customized for C++ and Qt development mainly)
-* git
 
-Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin, Windows 7.
+Made to work under Lubuntu-14.04, and later tuned to be used with Cygwin.
 
 ## Initial printscreens
 
 These are solely examples, the end version might look slightly different.  
 
-![ex-git](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-git.png?raw=true "Git repo example")  
+![ex-git](https://github.com/vicrucann/dotfiles/blob/master/img/ex-git.png?raw=true "Git repo example")  
 \* Inside modified git repository  
 
-![ex-vim](https://github.com/vicrucann/lubuntu-dot-configs/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")  
+![ex-vim](https://github.com/vicrucann/dotfiles/blob/master/img/ex-vim.png?raw=true "Vim and tmux example")  
 \* Editing with vim inside tmux session  
 
 ## Platforms
 
 * Was made to work under **Lubuntu**-14.04
-* Is being tuned to work with **Cygwin** under Windows 7 
+* Is being tuned to work with **Cygwin** 
 	* Note: the Cygwin must be **run as Administrtor** when installing (for symbolic links creation) 
 * Is being tested to run with **MinGW**, Windows 7
     * Note: before doing `git clone ...`, make sure the git global setting is put to `git config --global core.autocrlf input` in order to avoid end-of-line `^M` error
     * MinGW does not support `zsh` and `chsh` so it will have a very limited functionality
 
 ## Requirements
-Most of the packages are present on Linux (Lubuntu) by default. For the Cygwin, make sure you include in your download:
+
+Most of the packages are present on Linux (Lubuntu) by default. For the Cygwin, make sure your Cygwin installation include:
+
 * `git`
 * `zsh`
 * `chsh`
 * `vim`
 * `tmux`
 * `mc`
-* ?
 
 ## Installation  
 
 To perform the download, run from terminal:  
+
 ```
-$ git clone git://github.com/vicrucann/lubuntu-dot-configs.git ~/github/  
-$ cd github/lubuntu-dot-configs
+$ git clone https://github.com/vicrucann/dotfiles.git  
+$ cd dotfiles
 $ git submodule update --init --recursive  
 ```
-The installation command for Cygwin (Cygwin must be run under administrator rights):  
+
+The installation command for Cygwin (Cygwin **must be run under administrator rights**):
+  
 ```
 $ ./install.sh
 ```
-For Linux, it has to be run under `sudo` and bash must be enforced:  
+
+For Linux, it has to be run under `sudo` and bash must be enforced:
+  
 ```
 $ chmod +x install.sh
 $ sudo bash install.sh
 ```
+
+**Note 1**: If you install on clean terminal, you can say *yes* to all of the installation steps. One of the main reasons of those steps is so that to not re-install a package if you already have it, for example, when you try to upgrade the configuration, there is no need to re-install Prezto.
+
+**Note 2**: During the installation you might see error messages related to *vim*, especially if you do clean install. You can ignore them since they occur because you do not have the necessary vim config files (*E185: Cannot find color scheme 'solarized'*) yet.
+
+Assuming your installation is complete, re-run your shell and enjoy its new functionality.
+
+#### Installation steps - description
+
+If you do not wish to know the installation step details, skip this section, it only provides a textual description if you want to know what are the installation steps.
+
+1. Prezto installation from official github source
+2. Removal of previous symbolic links from `$HOME` such as `.vimrc`, `.zshrc`, `.tmux.conf` etc. Feel free to check file `install.sh` for the full list.
+3. Symbolic link creation. The `install.sh` checks for the terminal type (`cygwin` vs. `linux`) and uses corresponding command to create the symbolic link.
+4. Any *vim* setting removal: files at `$HOME` directory, as well as from `.vim` directory
+5. *Vundle* installation from official github source
+5. *vim* plugin installation using *Vundle*
+6. Changing the shell from *bash* to *zsh*
+
 #### Troubleshooting
 
 One of the most common problems when trying to run `install.sh` - line encoding is read wrongly by Cygwin (e.g. it treats the file encoding as `dos`, while it is supposed to be `unix`). One of the ways to change to the correct file encoding is:
+
 1. Open the `install.sh` in vim - `vim install.sh`
 2. In Vim, assign the correct file encoding to the file - `:w ++ff=unix`
 3. Now close the file - `:q` and try to run `install.sh` again 
+
+## Update from source
+
+To update the configuration files, first pull changes from the git repository. Assuming you are inside the `dotfiles` folder in your shell, run the following command:
+
+```
+~ dotfiles $ git pull
+```
+
+This will fetch all the recent changes.
+
+After that you can run `install.sh` as it was mentioned in *Installation* step above. This time you can answer differently on each installation step question:
+
+1. **No** to install Prezto (optional)
+2. **Yes** to remove previous links (necessary)
+3. **No** to remove previous vim settings (optional)
+4. **Yes** to plugin installation if any new plugins were added to the config settings
+
+## Customization
+
+Info on customizing environment variables, git settings, etc. will be here.
 
 ## Configuration files
 
@@ -86,7 +133,7 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 
 #### zsh
 * Based on Prezto  
-* Custom prompt configuration: [viruca](://github.com/vicrucann/lubuntu-dot-configs/blob/master/viruca.zsh-theme)
+* Custom prompt configuration: [viruca](://github.com/vicrucann/dotfiles/blob/master/viruca.zsh-theme)
 
 #### LXTerminial (Lubuntu)
 * Imitation of [Solarized](https://github.com/altercation/vim-colors-solarized) color scheme for background and foreground colors solely
@@ -101,7 +148,7 @@ One of the most common problems when trying to run `install.sh` - line encoding 
 
 #### ZSH
 ###### Environment variables
-* `$lubu` is the path for the `~/github/lubuntu-dot-configs`
+* `$dots` is the path for the `~/github/dotfiles`
 
 ###### Aliases
 

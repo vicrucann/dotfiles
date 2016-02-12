@@ -36,7 +36,7 @@ alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}
 ## }}}
 
 # Environment variables # {{{
-lubu="$HOME/github/lubuntu-dot-configs"
+dots="$HOME/github/dotfiles"
 algs="$HOME/github/codalgs/cforce"
 insitu="$HOME/github/dura-europos-insitu"
 ## }}}
