@@ -114,6 +114,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/c.vim'
 "Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
 "installation
 call vundle#end()

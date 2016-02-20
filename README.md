@@ -40,6 +40,7 @@ Most of the packages are present on Linux (Lubuntu) by default. For the Cygwin, 
 * `vim`
 * `tmux`
 * `mc`
+* might be needed some other packages such as `python-dev`, `cmake`, etc. Most of them are already pre-built with Linux, but not necessary with Cygwin.
 
 ## Installation  
 
