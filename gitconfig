@@ -2,7 +2,7 @@
 # Edit the parameters
 [user]
     name = Victoria Rudakova
-    email = vicrucann@gmail.com
+	email = vicrucann@protonmail.com
 [core]
     autocrlf = input
     editor = vim
