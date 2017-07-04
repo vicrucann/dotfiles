@@ -24,7 +24,7 @@ plink=$2
 printf "\nLink to be created: for file\n%s\n and with link to\n%s\n\n" $ptarget $plink
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    printf "Linux detedted\n"
+    printf "Linux detected\n"
     ln -sv $ptarget $plink
 elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
     printf "Cygwin detected\n"
@@ -77,6 +77,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rm -f ~/.vimrc
     rm -f ~/.zshrc
     rm -f ~/.config/lxterminal/lxterminal.conf
+    rm -f ~/.config/redshift.conf
     rm -f ~/.tmux.conf
     rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
     rm -f ~/.vim/template.cpp
@@ -102,6 +103,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         symlinker "$(pwd)/$ifs" "$HOME/.$ifs"
     done
     symlinker "$(pwd)/lxterminal.conf" "$HOME/.config/lxterminal/lxterminal.conf"
+    symlinker "$(pwd)/redshift.conf" "$HOME/.config/redshift.conf"
     symlinker "$(pwd)/template.cpp" "$HOME/.vim/template.cpp"
     symlinker "$(pwd)/prompt_viruca_setup" "$HOME/.zprezto/modules/prompt/functions/prompt_viruca_setup"
 fi
