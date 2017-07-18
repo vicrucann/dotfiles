@@ -1,3 +1,7 @@
+function ret_usermachine {
+	echo "%{%F{136}%}%n%{$reset_color%}@%{%F{61}%}%m%{$reset_color%}"
+}
+
 function ret_status {
 	if [ $? -ne 0 ]; then
 		 echo "%{%F{125}%}>"
@@ -41,7 +45,7 @@ function prompt_viruca_setup {
 		'prompt' '%b%C%D' \
 		'rprompt' ''
 	
-	PROMPT='$(ret_status) %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}${git_info:+${(e)git_info[prompt]}}%{%F{244}%} $ '
+	PROMPT='$(ret_usermachine) $(ret_status) %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}${git_info:+${(e)git_info[prompt]}}%{%F{244}%} $ '
 	RPROMPT=''
 	#[green]  path[orange] git_symbol[green] git_dir[yellow] $[white]
 }

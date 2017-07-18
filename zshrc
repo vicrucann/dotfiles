@@ -15,7 +15,8 @@ export LD_LIBRARY_PATH="/usr/local/lib64:/usr/local/lib:$LD_LIBRARY_PATH"
 export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/data/Images"
 
 # Qt5
-export QT5PREFIX=/opt/Qt/5.5/gcc_64
+#export QT5PREFIX=/opt/Qt/5.5/gcc_64
+export QT_AUTO_SCREEN_SCALE_FACTOR=2
 
 # allow terminal to support 256 color schemes
 if [[ $TERM == xterm ]]; then

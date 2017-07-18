@@ -16,7 +16,7 @@ function prompt_char {
 }
 
 #[green]  path[orange] git_symbol[green] $[white]
-PROMPT='${ret_status}%{%F{64}%}%p %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}$(git_prompt_info)%{%F{244}%} $ % %{$reset_color%}'
+PROMPT='${VIRUCA_USER}@${VIRUCA_MACHINE} ${ret_status}%{%F{64}%}%p %{%F{166}%}%c %{%F{64}%}$(prompt_char)%{%F{136}%}$(git_prompt_info)%{%F{244}%} $ % %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="" # master {green}
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
