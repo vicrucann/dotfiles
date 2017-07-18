@@ -26,6 +26,8 @@ fi
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
+# keep history from tmux on the next restart
+export PROMT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 ## }}}
 
 # Alias # {{{
@@ -59,6 +61,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # enable dircolors for ls and such
 eval `dircolors ~/.dircolors`
+
+# remember tmux history of commands
+setopt inc_append_history
 ## }}}
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
