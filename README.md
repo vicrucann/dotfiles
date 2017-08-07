@@ -162,7 +162,8 @@ Info on customizing environment variables, git settings, etc. will be here.
 `<C>a h` or `<C>a j` or `<C>a k` or `<C>a l` - jump the between the panes   
 `<C>-a <up>\<down>\<left>\<right>` - move between the open panes  
 `<C>a H` or `<C>a J` or `<C>a K` or `<C>a L` - resize the panes   
-`<C>a <tab>` or `<C>a <backspace>` - toggle/untoggle and bring focus to sidebar with directory tree  
+`<C>a <tab>` or `<C>a <backspace>` - toggle/untoggle and bring focus to sidebar with directory tree 
+`<C>a [` scroll withint the tmux buffer. `Esc` - quit the scrolling mode.
 `<C>a r` - reload the current tmux config  
 `<C>d` - close current window  
 `<C>a c` - open up another window  
