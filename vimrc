@@ -107,7 +107,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
@@ -135,8 +136,12 @@ let g:syntastic_cpp_config_file = '~/.syntastic_cpp_config_file'
 " Solarized color scheme
 set t_Co=256
 let g:solarized_termcolors=256
-set background=light
+let g:solarized_visibility="high"
+set background=dark
 colorscheme solarized
+
+" Airline status bar
+let g:airline_theme='dark'
 
 " CtrlP
 "map <leader>t <C-p>
