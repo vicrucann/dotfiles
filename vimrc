@@ -106,6 +106,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 "Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -135,13 +136,21 @@ let g:syntastic_cpp_config_file = '~/.syntastic_cpp_config_file'
 
 " Solarized color scheme
 set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_visibility="high"
 set background=dark
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_visibility="high"
+let g:solarized_contrast="high"
 colorscheme solarized
 
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_light="soft"
+" colorscheme gruvbox
+
 " Airline status bar
-let g:airline_theme='dark'
+let g:airline_theme='gruvbox'
 
 " CtrlP
 "map <leader>t <C-p>
@@ -205,6 +214,11 @@ let g:NERDTreeDirArrows=0
 " Map <F4> to open NERDTree
 :nmap <F4> <Esc> :NERDTree<CR>
 :imap <F4> <Esc> :NERDTree<CR>
+
+" clear highlight on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 
 " }}}
 
