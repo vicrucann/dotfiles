@@ -110,6 +110,7 @@ Plugin 'morhetz/gruvbox'
 "Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
@@ -151,6 +152,10 @@ let g:gruvbox_contrast_light="soft"
 
 " Airline status bar
 let g:airline_theme='gruvbox'
+
+" Bufferline
+let g:bufferline_modified = '+'
+let g:bufferline_pathshorten = 1
 
 " CtrlP
 "map <leader>t <C-p>
@@ -214,11 +219,6 @@ let g:NERDTreeDirArrows=0
 " Map <F4> to open NERDTree
 :nmap <F4> <Esc> :NERDTree<CR>
 :imap <F4> <Esc> :NERDTree<CR>
-
-" clear highlight on escape in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
-
 
 " }}}
 
