@@ -151,10 +151,11 @@ let g:gruvbox_contrast_light="soft"
 " colorscheme gruvbox
 
 " Airline status bar
-let g:airline_theme='gruvbox'
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
 
 " Bufferline
-let g:bufferline_modified = '+'
+let g:bufferline_modified = '*'
 let g:bufferline_pathshorten = 1
 
 " CtrlP
@@ -219,6 +220,11 @@ let g:NERDTreeDirArrows=0
 " Map <F4> to open NERDTree
 :nmap <F4> <Esc> :NERDTree<CR>
 :imap <F4> <Esc> :NERDTree<CR>
+
+" Map normal mode gb and gB for buffers
+" like it is done for tabs (gt/gT)
+:nnoremap gb :bn<CR>
+:nnoremap gB :bN<CR>
 
 " }}}
 
