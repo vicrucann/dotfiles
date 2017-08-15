@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file
 # Edit the parameters
 [user]
-    name = Victoria Rudakova
+	name = Victoria Rudakova
 	email = vicrucann@protonmail.com
 [core]
     autocrlf = input
