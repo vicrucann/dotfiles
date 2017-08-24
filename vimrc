@@ -116,6 +116,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/Conque-GDB'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/c.vim'
 "Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
@@ -134,6 +135,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11'
+
+" Debugger Conque-GDB
+let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
+let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
+let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly 
 
 " Solarized color scheme
 set t_Co=256
