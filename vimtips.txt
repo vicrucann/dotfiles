@@ -1,13 +1,12 @@
 *vimtips.txt*	For Vim version 7.3	Last change: 2017 August 24
 
-To make sure the text formatting is displayed correctyly: >
+To make sure the text formatting is displayed correctly/no formatting: >
     :set filetype=help
+    :set syntax=off
 <
-
 To follow the link press: >
     <CTRL> ]
 <
-
 To return back to previous/next cursor position: >
     <CTRL> O
     <CTRL> I

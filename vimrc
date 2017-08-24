@@ -15,7 +15,7 @@ set nowritebackup
 set noswapfile
 
 " Command history
-set history=100
+set history=1000
 
 " Always show cursor
 set ruler
@@ -133,7 +133,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_config_file = '~/.syntastic_cpp_config_file'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 " Solarized color scheme
 set t_Co=256
@@ -259,6 +259,7 @@ autocmd FileType sh,cucumber,ruby,yaml,zsh,vim setlocal shiftwidth=2
 
 " "specify syntax highlighting for specific files
 autocmd Bufread,BufNewFile *.md set filetype=markdown
+autocmd Bufread *vimtips* set filetype=help
 
 " Highlight words to avoid in tech writing
 " " http://css-tricks.com/words-avoid-educational-writing/
