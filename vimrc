@@ -62,7 +62,7 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set laststatus=2
 
 " " Set the status line to something useful
-set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
+" set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
 
 " " UTF encoding
 set encoding=utf-8
@@ -131,7 +131,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_config_file = '~/.syntastic_cpp_config_file'
 

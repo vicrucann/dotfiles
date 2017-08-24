@@ -1,0 +1,110 @@
+*vimtips.txt*	For Vim version 7.3	Last change: 2017 August 24
+
+To make sure the text formatting is displayed correctyly: >
+    :set filetype=help
+<
+
+To follow the link press: >
+    <CTRL> ]
+<
+
+To return back to previous/next cursor position: >
+    <CTRL> O
+    <CTRL> I
+<
+                              Reference ~
+
+==============================================================================
+CONTENTS                                                  *vimtips-contents*
+    File browser using `NERDTree`...............................|vimtips-nerdtree|
+    Window splits...............................................|vimtips-splits|
+    Buffers....................................................|vimtips-buffers|
+    Working with code...........................................|vimtips-coding|
+        Syntax check.........................................|vimtips-syntastic|
+        Comments using `NERDCommenter`......................|vimtips-codecomments|
+        Comments blocks.....................................|vimtips-codeblocks|
+
+
+==============================================================================
+File broswer using `NERDTree`	                             *vimtips-nerdtree*
+
+Toggle the file browser: >
+     \'
+<
+
+==============================================================================
+Windows splits					                                *vimtips-splits*
+
+Open horizontal spit: >
+    :split
+<
+Increase/decrease the size of vertical split: >
+    :vertical resize +10
+<
+==============================================================================
+Buffers					                                    *vimtips-buffers*
+
+Go to the next, previous or specified buffers: >
+    gb
+    gB
+    :buffer [number]
+<
+Delete (close) current buffer: >
+    bd
+    :bd
+<
+
+==============================================================================
+Working with code					                          *vimtips-coding*
+
+------------------------------------------------------------------------------
+Syntax check                                                *vimtips-syntastic*
+   
+Toggle Syntastic mode: >
+    :SyntasticToggleMode
+<
+Check a file: >
+    :SyntasticCheck
+<
+Reset a list of errors and turn off notifiers: >
+    :SyntasticReset
+<
+------------------------------------------------------------------------------
+Comments using `NERDCommenter`                          *vimtips-codecomments*
+   
+Comment a selected block of code (visual mode): >
+    \cc
+<
+Uncomment the selected block of code (visual mode): >
+    \cu
+<
+Toggle the comment state of the selected lines based on the state of topmost
+line: >
+    \<SPACE>
+<
+Yank and comment: >
+    \cy
+<
+Comment sexily: >
+    \cs
+<
+------------------------------------------------------------------------------
+Comments blocks                                             *vimtips-codeblocks*
+   
+Comments that are enclosed between tripple curved brackets, for example: >
+    # code block name {{{ 
+    # some python code, e.g:
+    a += 1
+    # }}}
+<
+Or: >
+    " code block name {{{
+    " some vim settings code, e.g.:
+    syntax on 
+    " }}} 
+<
+Can be folded (closed) or unfolded (open) by using: >
+    z-c
+    z-o
+<
+
