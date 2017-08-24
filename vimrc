@@ -131,7 +131,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_config_file = '~/.syntastic_cpp_config_file'
 
@@ -152,7 +152,7 @@ let g:gruvbox_contrast_light="soft"
 
 " Airline status bar
 let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " Bufferline
 let g:bufferline_modified = '*'
@@ -217,14 +217,27 @@ let g:NERDTreeDirArrows=0
 :nmap <F5> <Esc> :!./%:r<CR>
 :imap <F5> <Esc> :!./%:r<CR>
 
-" Map <F4> to open NERDTree
-:nmap <F4> <Esc> :NERDTree<CR>
-:imap <F4> <Esc> :NERDTree<CR>
-
 " Map normal mode gb and gB for buffers
 " like it is done for tabs (gt/gT)
 :nnoremap gb :bn<CR>
 :nnoremap gB :bN<CR>
+
+" Map normal mode bd for :bd to delete the current buffer
+:nnoremap bd :bd<CR>
+
+" vimtips
+let g:VimTips="off"
+function! ToggleVimTips()
+  if g:VimTips == "on"
+    let g:VimTips="off"
+    pclose
+  else
+    let g:VimTips="on"
+    pedit ~/.vimtips
+  endif
+endfunction
+
+nnoremap \? :call ToggleVimTips()<CR>
 
 " }}}
 
