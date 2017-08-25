@@ -98,7 +98,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     printf "Creating symbolic links...\n"
     # dotfiles to copy to $HOME
-    FILES="zshrc tmux.conf vimrc dircolors zpreztorc zprofile zshenv gitconfig syntastic_config"
+    FILES="zshrc tmux.conf vimrc dircolors zpreztorc zprofile zshenv gitconfig syntastic_config vimtips"
     for ifs in `echo $FILES`; do
         symlinker "$(pwd)/$ifs" "$HOME/.$ifs"
     done

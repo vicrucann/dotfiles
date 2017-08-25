@@ -1,0 +1,100 @@
+*vimtips.txt*	For Vim version 7.3	Last change: 2017 August 24
+
+To make sure the text formatting is displayed correctly/no formatting: >
+    :set filetype=help
+    :set syntax=off
+
+File broswer using `NERDTree` ~
+{{{
+Toggle the file browser: >
+     \'
+<
+}}}
+
+Windows splits ~
+{{{
+Open horizontal spit: >
+    :split
+<
+Increase/decrease the size of vertical split: >
+    :vertical resize +10
+<
+}}}
+
+Buffers ~
+{{{
+Go to the next, previous or specified buffers: >
+    gb
+    gB
+    :buffer [number]
+<
+Delete (close) current buffer: >
+    bd
+    :bd
+<
+}}}
+
+Syntax check ~
+{{{
+Toggle Syntastic mode: >
+    :SyntasticToggleMode
+<
+Check a file: >
+    :SyntasticCheck
+<
+Reset a list of errors and turn off notifiers: >
+    :SyntasticReset
+<
+}}}
+
+Comments using `NERDCommenter` ~
+{{{
+Comment a selected block of code (visual mode): >
+    \cc
+<
+Uncomment the selected block of code (visual mode): >
+    \cu
+<
+Toggle the comment state of the selected lines based on the state of topmost
+line: >
+    \<SPACE>
+<
+Yank and comment: >
+    \cy
+<
+Comment sexily: >
+    \cs
+<
+}}}
+
+Comments blocks ~
+{{{   
+<
+Can be folded (closed) or unfolded (open) by using: >
+    z-c
+    z-o
+<
+}}}
+
+Debugger Commands ~
+{{{   
+Launch the debugger in the same window, with a specified split, or in a tab: >
+    :ConqueGDB [-d dir] [program]
+    :ConqueGDBSplit
+    :ConqueGDBVSplit
+    :ConqueGDBTab
+<
+Mappings for the most used commands - run, continue, next, step, print under
+cursor, toggle breakpoint on current line: >
+    \r
+    \c
+    \n
+    \s
+    \p
+    \b
+<
+Remove all the non-modified buffers that we opened by `gdb`: >
+    :ConqueGdbDelete
+<
+
+}}}
