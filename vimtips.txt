@@ -11,8 +11,8 @@ To return back to previous/next cursor position: >
     <CTRL> O
     <CTRL> I
 <
-                              Reference ~
 
+                              Reference ~ {{{
 ==============================================================================
 CONTENTS                                                  *vimtips-contents*
     File browser using `NERDTree`...............................|vimtips-nerdtree|
@@ -22,14 +22,16 @@ CONTENTS                                                  *vimtips-contents*
         Syntax check.........................................|vimtips-syntastic|
         Comments using `NERDCommenter`......................|vimtips-codecomments|
         Comments blocks.....................................|vimtips-codeblocks|
-
+        Debugger commands......................................|vimtips-codegdb|
+}}}
 
 ==============================================================================
 File broswer using `NERDTree`	                             *vimtips-nerdtree*
-
+{{{
 Toggle the file browser: >
      \'
 <
+}}}
 
 ==============================================================================
 Windows splits					                                *vimtips-splits*
@@ -105,5 +107,23 @@ Or: >
 Can be folded (closed) or unfolded (open) by using: >
     z-c
     z-o
+<
+------------------------------------------------------------------------------
+Debugger Commands                                             *vimtips-codegdb*
+   
+Launch the debugger in the same window, with a specified split, or in a tab: >
+    :ConqueGDB [-d dir] [program]
+    :ConqueGDBSplit
+    :ConqueGDBVSplit
+    :ConqueGDBTab
+<
+Mappings for the most used commands - run, continue, next, step, print under
+cursor, toggle breakpoint on current line: >
+    \r
+    \c
+    \n
+    \s
+    \p
+    \b
 <
 
