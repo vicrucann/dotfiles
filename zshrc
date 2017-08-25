@@ -19,10 +19,12 @@ export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/d
 export QT_AUTO_SCREEN_SCALE_FACTOR=2
 
 # Java and ant
-export JAVA_HOME="/cygdrive/c/Program Files/Java/jdk1.8.0_144"
-export PATH=$JAVA_HOME/bin:$PATH
-export ANT_HOME="/cygdrive/c/apache-ant-1.10.1"
-export PATH=$ANT_HOME/bin:$PATH
+if [[ "$(uname -s)" == CYGWIN* ]]; then
+  export JAVA_HOME="/cygdrive/c/Program Files/Java/jdk1.8.0_144"
+  export PATH=$JAVA_HOME/bin:$PATH
+  export ANT_HOME="/cygdrive/c/apache-ant-1.10.1"
+  export PATH=$ANT_HOME/bin:$PATH
+fi
 
 # allow terminal to support 256 color schemes
 if [[ $TERM == xterm ]]; then
