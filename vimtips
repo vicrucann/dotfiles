@@ -118,6 +118,11 @@ Reload the last saved session: >
 
 Tmux: sessions ~
 {{{
+
+Sessions are especially useful when lots of tmux panes were left while closing
+the terminal, and later in time, we want to reopen the same panel
+configuration. 
+
 Create new sessions: >
     tmux new -s mySessionName
 
@@ -144,6 +149,20 @@ Attach to last sessions: >
 Move between the sessions: >
     <Ctrl>a (
     <Ctrl>a )
+<
+}}}
+
+Tmux: windows ~
+{{{
+Create new window: >
+    <Ctrl>a c
+
+Go to next / previous window: >
+    <Ctrl>a n
+    <Ctrl>a p
+
+Close current window: >
+    <ctrl>a &
 <
 }}}
 
