@@ -4,14 +4,17 @@ To make sure the text formatting is displayed correctly/no formatting: >
     :set filetype=help
     :set syntax=off
 
-File broswer using `NERDTree` ~
+To open this window as a split, use `<prefix>?`, e.g.: >
+    \?
+<
+Vim: File broswer using `NERDTree` ~
 {{{
 Toggle the file browser: >
      \'
 <
 }}}
 
-Windows splits ~
+Vim: Windows splits ~
 {{{
 Open horizontal spit: >
     :split
@@ -21,7 +24,7 @@ Increase/decrease the size of vertical split: >
 <
 }}}
 
-Buffers ~
+Vim: Buffers ~
 {{{
 Go to the next, previous or specified buffers: >
     gb
@@ -34,7 +37,7 @@ Delete (close) current buffer: >
 <
 }}}
 
-Syntax check ~
+Vim: Syntax check ~
 {{{
 Toggle Syntastic mode: >
     :SyntasticToggleMode
@@ -47,7 +50,7 @@ Reset a list of errors and turn off notifiers: >
 <
 }}}
 
-Comments using `NERDCommenter` ~
+Vim: Comments using `NERDCommenter` ~
 {{{
 Comment a selected block of code (visual mode): >
     \cc
@@ -67,7 +70,7 @@ Comment sexily: >
 <
 }}}
 
-Comments blocks ~
+Vim: Comments blocks ~
 {{{   
 <
 Can be folded (closed) or unfolded (open) by using: >
@@ -76,7 +79,7 @@ Can be folded (closed) or unfolded (open) by using: >
 <
 }}}
 
-Debugger Commands ~
+Vim: Debugger Commands ~
 {{{   
 Launch the debugger in the same window, with a specified split, or in a tab: >
     :ConqueGDB [-d dir] [program]
@@ -97,4 +100,102 @@ Remove all the non-modified buffers that we opened by `gdb`: >
     :ConqueGdbDelete
 <
 
+}}}
+
+Tmux: Save and reload a specific session (plugin used) ~
+{{{
+Using `tmux-resurrect` plugin, it's possible to save current session
+(including the vim sessions and content) and then restore the full content
+(panels, vim buffers, etc.) of the last saved session.
+
+Save current session: >
+    <Ctrl>a <Ctrl>s
+<
+Reload the last saved session: >
+    <Ctrl>a <Ctrl>r
+<
+}}}
+
+Tmux: sessions ~
+{{{
+Create new sessions: >
+    tmux new -s mySessionName
+
+Delete certain session: >
+    tmux kill-session -t mySessionName
+
+Kill/delete all sessions, but current: >
+    tmux kill-session -a [-t mySessionName]
+
+Rename session: >
+    <Ctrl>a $
+
+Detach from session: >
+    <Ctrl>a d
+
+List all sessions: >
+    tmux ls (list-sessions)
+    <Ctrl>a s
+
+Attach to last sessions: >
+    tmux a [-t mySessionName]
+    tmux attach
+
+Move between the sessions: >
+    <Ctrl>a (
+    <Ctrl>a )
+<
+}}}
+
+Tmux: panels ~
+{{{
+Split the screen in half vertically/horizontally: >
+    <Ctrl>a |
+    <Ctrl>a -
+<
+Jump between the open panes (in brackets: alternative way): >
+    <Ctrl>a <up> (k)
+    <Ctrl>a <down> (j)
+    <Ctrl>a <left> (h)
+    <Ctrl>a <right> (l)
+    <Ctrl>a q <number>
+<
+Resize the panes: >
+    <Ctrl>a K
+    <Ctrl>a J
+    <Ctrl>a H
+    <Ctrl>a L
+<
+Working with the tmux terminal window: scrolling within the buffer and exiting
+from the scrolling proceduew (in brackets: alternative way): >
+    <Ctrl>a [
+    <Esc> (q)
+<
+Toggle pane zoom, make the current pane fullscreen-like: >
+    <Ctrl>a z
+<
+Close current pane: >
+    <Ctrl>a x
+<
+}}}
+
+Tmux: copy mode ~
+{{{
+
+In this mode, similar to scrolling mode `<Ctrl>a ]`, common vim keys apply,
+e.g., `/` for search, `v` for selection and others.
+
+Enter / exit copy mode: >
+    <Ctrl>a [
+    q
+<
+}}}
+
+Tmux: misc ~
+{{{
+
+Display time / exit in current pane: >
+    <Ctrl>a t
+    q
+<
 }}}

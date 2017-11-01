@@ -146,18 +146,15 @@ Info on customizing environment variables, git settings, etc. will be here.
 #### dircolors
 * Based on [Solarized](https://github.com/altercation/vim-colors-solarized) scheme to diffirintiate between different file types when using commands such as `ls` - dircolors file for Lubuntu is taken from [dircolors-solarized project](https://github.com/seebi/dircolors-solarized)
 
-## Basic commands / bindings
+## Prefixes, paths, help
 
-#### ZSH
-###### Environment variables
-* `$dots` is the path for the `~/github/dotfiles`
-
-###### Aliases
-
+* Tmux prefix: `<C>a`. 
+* Vim prefix: `\` (e.g. when using with `NERDCommenter`, etc.).
+* To open **vim command tips**, open vim and then in *normal* mode: `\?`. Use `<C>w+<up>` and `<C>w+<down>` to naviage between the main vim window and the open **vim tips** window.
+* Zsh variable: `$dots` is the path for the `~/github/dotfiles`.
 
 #### Tmux
 
-`tmux new -s tmname` - attach the new tmux session named `tmname`  
 `<C>a |` - split the screen in half vertically  
 `<C>a -` - split the pane in half horizontally  
 `<C>a h` or `<C>a j` or `<C>a k` or `<C>a l` - jump the between the panes   
@@ -169,10 +166,7 @@ Info on customizing environment variables, git settings, etc. will be here.
 `<C>d` - close current window  
 `<C>a c` - open up another window  
 `<C>a n` - go to the next window  
-`<C>a d` - disconnect from Tmux  
 `$ tmux ls` - in terminal: check what Tmux sessions are running  
-`$ tmux attach -t tmname` - in terminal: attach the session `tmname` back  
-`$ tmux kill-session -t tmname` - kill the `tmname` session  
 
 
 
