@@ -136,6 +136,16 @@ else
     printf "The vim setup is skipped\n"
 fi
 
+# tmux plugins
+read -p "Do you want to install tmux plugin manager? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  printf "Clonning the manager git repo.\n"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  printf "Reloading tmux environment so TPM is sourced."
+  tmux source ~/.tmux.conf
+fi
+
 # change to zsh
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     chsh -s $(which zsh) 
@@ -151,4 +161,5 @@ else
 	printf "ERROR: current platform is not supported\n"
 	exit 1
 fi
+printf "\nRecommended: verify the shell was changed to zsh. If not, do it manually, e.g., chsh -s /usr/bin/zsh\n"
 printf "Done\n\n"
