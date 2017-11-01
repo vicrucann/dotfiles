@@ -6,17 +6,10 @@ export MANPAGER="less -X" # sceen is not cleared after quitting the man page
 export EDITOR="vim"
 export VISUAL="vim"
 
-# OpenSceneGraph variables for installation
-export OPENTHREADS_INC_DIR="/usr/local/include"
-export OPENTHREADS_LIB_DIR="/usr/local/lib64:/usr/local/lib"
-export PATH="$OPENTHREADS_LIB_DIR:$PATH"
-export LD_LIBRARY_PATH="/usr/local/lib64:/usr/local/lib:$LD_LIBRARY_PATH"
 # export COMPILE_INTROSPECTION=no # uncomment for cygwin
-export OSG_FILE_PATH="/usr/local/OpenSceneGraph/data:/usr/local/OpenSceneGraph/data/Images"
 
 # Qt5
-#export QT5PREFIX=/opt/Qt/5.5/gcc_64
-export QT_AUTO_SCREEN_SCALE_FACTOR=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=2 # for Qt Creator
 
 # Java and ant
 if [[ "$(uname -s)" == CYGWIN* ]]; then
@@ -48,8 +41,7 @@ alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}
 
 # Environment variables # {{{
 dots="$HOME/github/dotfiles"
-algs="$HOME/github/codalgs/cforce"
-insitu="$HOME/github/dura-europos-insitu"
+work="$HOME/density"
 ## }}}
 
 # Other # {{{

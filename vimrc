@@ -119,6 +119,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/c.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
 "installation
 call vundle#end()
