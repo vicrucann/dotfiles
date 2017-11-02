@@ -106,20 +106,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'       " required by vundle
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
-"Plugin 'flazz/vim-colorschemes'  " diff color schemes, we will only use solarized
-Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox' " considering to change from solarized, have to fix color representation for the terminal
+Plugin 'vim-airline/vim-airline' " status line
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-bufferline'
-Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-bufferline' " list of buffers within status line
+Plugin 'scrooloose/nerdtree' " file browser
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter' " comment blocks of code
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/Conque-GDB'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter' " git changes to a file
 Plugin 'vim-scripts/c.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy search for filenames
+Plugin 'tmux-plugins/vim-tmux-focus-events' " vim buffers are updated if changed outside of vim
 "Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
 "installation
 call vundle#end()
