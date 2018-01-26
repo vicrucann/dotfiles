@@ -219,5 +219,6 @@ Display time / exit in current pane: >
 <
 Reload tmux config while being in a tmux session: >
     <Ctrl>a :source-file ~/.tmux.conf
+    <Ctrl>a r
 <
 }}}
