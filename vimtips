@@ -50,6 +50,29 @@ Reset a list of errors and turn off notifiers: >
 <
 }}}
 
+Vim: Spell check ~
+{{{
+Turn spell check on: >
+    :set spell [spelllang=en_us]
+<
+Turn it off: >
+    :set nospell
+
+Mobing to the next/previous misspelled word: >
+    ]s
+    [s
+<
+Open suggestions while on the word: >
+    z=
+<
+If none of the suggestions work, to exis: >
+    Enter
+<
+Adding a word to the vim dictionary: >
+    zg
+< 
+}}}
+
 Vim: Comments using `NERDCommenter` ~
 {{{
 Comment a selected block of code (visual mode): >

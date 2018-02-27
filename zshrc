@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPAGER="less -X" # sceen is not cleared after quitting the man page
 export EDITOR="vim"
 export VISUAL="vim"
-
+export PATH="$PATH:$HOME/.local/bin"
 # export COMPILE_INTROSPECTION=no # uncomment for cygwin
 
 # Qt5
