@@ -10,15 +10,11 @@
     user = vicrucann
 [color]
     ui = true
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = red
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    pager = true
 [alias]
     # show all branches
     br = branch -av
