@@ -4,9 +4,23 @@ To make sure the text formatting is displayed correctly/no formatting: >
     :set filetype=help
     :set syntax=off
 
+The `<Leader>` or `<prefix>` is defined as >
+    \
+<
+
 To open this window as a split, use `<prefix>?`, e.g.: >
     \?
 <
+Vim: Plugin installation ~
+{{{
+Inside vim session: >
+     :PluginInstall
+<
+From bash: >
+    vim +PluginInstall +qall
+<
+}}}
+
 Vim: File broswer using `NERDTree` ~
 {{{
 Toggle the file browser: >
@@ -121,6 +135,23 @@ cursor, toggle breakpoint on current line: >
 <
 Remove all the non-modified buffers that we opened by `gdb`: >
     :ConqueGdbDelete
+<
+
+}}}
+
+Vim: Using EasyMotion plugin ~
+{{{   
+<
+To start searching, use `<Prefix><Prefix>s` and then enter one character, e.g.: >
+    \\s+a
+    \\s+b
+<
+That will highlight all the words that contain `a` in first case and `b` in
+the second case. In order to jump to the highlighted word, use the highlighted
+character.
+
+To search for a word: >
+    \\s+w
 <
 
 }}}

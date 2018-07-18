@@ -120,6 +120,7 @@ Plugin 'airblade/vim-gitgutter' " git changes to a file
 Plugin 'vim-scripts/c.vim'
 Plugin 'ctrlpvim/ctrlp.vim' " fuzzy search for filenames
 Plugin 'tmux-plugins/vim-tmux-focus-events' " vim buffers are updated if changed outside of vim
+Plugin 'easymotion/vim-easymotion' " jump different places using keyboard
 "Plugin 'vim-scripts/OmniCppComplete' " may require additional steps for
 "installation
 call vundle#end()
