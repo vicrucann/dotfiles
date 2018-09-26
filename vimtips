@@ -210,7 +210,10 @@ Tmux: windows ~
 {{{
 Create new window: >
     <Ctrl>a c
-
+<
+Rename current window: >
+    <Ctrl>a ,
+<
 Go to next / previous window: >
     <Ctrl>a n
     <Ctrl>a p
