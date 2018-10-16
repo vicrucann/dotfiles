@@ -68,4 +68,18 @@ eval `dircolors ~/.dircolors`
 setopt inc_append_history
 ## }}}
 
+# Sound effects with long-running processes # {{{
+# Example usage: cmake something; oks 
+
+oks(){
+  s=$?
+  if [[ $s = 0 ]]; then
+    paplay $HOME/Mallet.ogg
+  else
+    paplay $HOME/sonar.ogg
+  fi
+}
+
+## }}}
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

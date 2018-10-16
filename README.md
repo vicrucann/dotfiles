@@ -64,6 +64,8 @@ For Linux:
 $ chmod +x install.sh
 $ bash install.sh
 $ bash install-tmux.sh
+$ bash install-sounds.sh
+$ bash test_sound.sh
 ```
 
 **Note 1**: If you install on clean terminal, you can say *yes* to all of the installation steps. One of the main reasons of those steps is so that to not re-install a package if you already have it, for example, when you try to upgrade the configuration, there is no need to re-install Prezto.
