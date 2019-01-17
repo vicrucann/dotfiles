@@ -156,6 +156,35 @@ To search for a word: >
 
 }}}
 
+Vim: Copy and paste from clipboard ~
+{{{   
+<
+Depending on the system, the keys can be different, e.g.: `"+` or `"*`.
+
+Copy into a clipboard and *paste* into vim while being in normal mode: >
+    "+p
+    "+P
+<
+
+Using the same principle, in normal mode, it is possible to *copy* into a clipboard: >
+    "+y
+    "+Y
+<
+}}}
+
+Vim: Visual block mode ~
+{{{   
+<
+To enter visual block mode, make sure the cursor is set up at the beginning of
+the targeted word: >
+    <Ctrl>v
+<
+
+Expand selected using cursor, do the necessary changes of the word by entering
+*insert* mode, and when done press `<ESC>`.
+}}}
+
+
 Tmux: Save and reload a specific session (plugin used) ~
 {{{
 Using `tmux-resurrect` plugin, it's possible to save current session
