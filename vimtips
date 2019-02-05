@@ -26,6 +26,12 @@ Vim: File broswer using `NERDTree` ~
 Toggle the file browser: >
      \'
 <
+Increasing / decreasing of the window split on *N* number of columns: >
+    N <CTRL>w >
+    N <CTRL>w <
+    :vertical res N
+    :vertical res -N
+<
 }}}
 
 Vim: Windows splits ~
