@@ -190,6 +190,27 @@ Expand selected using cursor, do the necessary changes of the word by entering
 *insert* mode, and when done press `<ESC>`.
 }}}
 
+Vim: Bookmarks ~
+{{{   
+Set up a bookmarks: >
+    m,
+<
+Remove the bookmark at current line: >
+    m-
+<
+Jump to the next bookamark: >
+    ]`
+    [`
+>
+Toggle/remove a bookmark with specific character `x`: >
+    mx
+    dmx
+>
+Delete all marks from current buffer: >
+    m<Space>
+>
+}}}
+
 
 Tmux: Save and reload a specific session (plugin used) ~
 {{{
