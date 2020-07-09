@@ -115,7 +115,7 @@ Plugin 'scrooloose/nerdtree' " file browser
 Plugin 'scrooloose/nerdcommenter' " comment blocks of code
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/Conque-GDB'
+"Plugin 'vim-scripts/Conque-GDB'
 Plugin 'airblade/vim-gitgutter' " git changes to a file
 Plugin 'vim-scripts/c.vim'
 Plugin 'ctrlpvim/ctrlp.vim' " fuzzy search for filenames
@@ -138,10 +138,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
-" Debugger Conque-GDB
-let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
-let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
-let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly 
+"" Debugger Conque-GDB
+"let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
+"let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
+"let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly 
 
 " Solarized color scheme
 set t_Co=256
@@ -151,15 +151,19 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_visibility="high"
 let g:solarized_contrast="high"
-colorscheme solarized
+"colorscheme solarized
 
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_contrast_light="soft"
-" colorscheme gruvbox
+ colorscheme gruvbox
+" background transparency is inherited from terminal settings
+hi Normal guibg=NONE ctermbg=NONE 
+
 
 " Airline status bar
 let g:airline_theme='solarized'
+let g:airline#extensions#bufferline#enabled = 1 
 " let g:airline#extensions#tabline#enabled = 1
 
 " Bufferline
