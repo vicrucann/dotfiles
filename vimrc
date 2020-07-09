@@ -109,7 +109,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox' " considering to change from solarized, have to fix color representation for the terminal
 Plugin 'vim-airline/vim-airline' " status line
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-bufferline' " list of buffers within status line
+"Plugin 'bling/vim-bufferline' " list of buffers within status line
 Plugin 'scrooloose/nerdtree' " file browser
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter' " comment blocks of code
@@ -163,17 +163,17 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Airline status bar
 let g:airline_theme='solarized'
-let g:airline#extensions#bufferline#enabled = 1 
-" let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#bufferline#enabled = 1 
+ let g:airline#extensions#tabline#enabled = 1
 
-" Bufferline
-let g:bufferline_modified = '*'
-let g:bufferline_pathshorten = 1
+"" Bufferline
+"let g:bufferline_modified = '*'
+"let g:bufferline_pathshorten = 1
 
 " CtrlP
 "map <leader>t <C-p>
 "map <leader>y :CtrlPBuffer<cr>
-"let g:ctrlp_show_hidden=1
+"let g:ctrlp_show_hidded=1
 "let g:ctrlp_working_path_mode=0
 "let g:ctrlp_max_height=30
 " CtrlP -> override <C-o> to provide options for how to open files
