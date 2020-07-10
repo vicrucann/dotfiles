@@ -156,7 +156,7 @@ let g:solarized_contrast="high"
 
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark="soft"
-let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_light="hard"
  colorscheme gruvbox
 " background transparency is inherited from terminal settings
 hi Normal guibg=NONE ctermbg=NONE 
