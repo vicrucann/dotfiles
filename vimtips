@@ -32,6 +32,9 @@ Increasing / decreasing of the window split on *N* number of columns: >
     :vertical res N
     :vertical res -N
 <
+Update the browser: >
+    \r
+>
 }}}
 
 Vim: Windows splits ~
