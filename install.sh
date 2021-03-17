@@ -149,3 +149,4 @@ fi
 #fi
 printf "Done installing shell, vim and other terminal settings.\n\n"
 printf "\nNow you can change the shell to zsh. E.g., chsh -s /usr/bin/zsh\n"
+printf "\nNext: Run the tmux-install.sh.\n"
