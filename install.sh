@@ -77,10 +77,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rm -f ~/.vimrc
     rm -f ~/.zshrc
     rm -f ~/.config/lxterminal/lxterminal.conf
-    rm -f ~/.config/redshift.conf
     rm -f ~/.tmux.conf
     rm -f ~/.zprezto/modules/prompt/functions/prompt_viruca_setup
-    rm -f ~/.vim/template.cpp
     rm -f ~/.dircolors
     rm -f ~/.zlogin
     rm -f ~/.zlogout
@@ -103,8 +101,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         symlinker "$(pwd)/$ifs" "$HOME/.$ifs"
     done
     symlinker "$(pwd)/lxterminal.conf" "$HOME/.config/lxterminal/lxterminal.conf"
-    symlinker "$(pwd)/redshift.conf" "$HOME/.config/redshift.conf"
-    symlinker "$(pwd)/template.cpp" "$HOME/.vim/template.cpp"
     symlinker "$(pwd)/prompt_viruca_setup" "$HOME/.zprezto/modules/prompt/functions/prompt_viruca_setup"
 fi
 printf "Done\n\n"
@@ -151,6 +147,5 @@ fi
 	#printf "ERROR: current platform is not supported\n"
 	#exit 1
 #fi
-printf "\nNow you can change the shell to zsh. E.g., chsh -s /usr/bin/zsh\n"
-printf "\nNext: Run the tmux-install.sh.\n"
 printf "Done installing shell, vim and other terminal settings.\n\n"
+printf "\nNow you can change the shell to zsh. E.g., chsh -s /usr/bin/zsh\n"
