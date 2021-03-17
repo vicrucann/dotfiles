@@ -1,6 +1,4 @@
 # Victoria Rudakova 2015
-# vicrucann@gmail.com
-# MIT licence
 
 # The current user
 VIRUCA_USER="%{%F{136}%}%n%{$reset_color%}"
